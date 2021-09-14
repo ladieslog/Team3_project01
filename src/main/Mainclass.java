@@ -1,17 +1,20 @@
+
 package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import movie_cret.Controller;
 
-public class MainClass extends Application{
+public class Mainclass extends Application{
 	@Override
 	public void start(Stage arg0) throws Exception {
+		Font.loadFont(getClass().getResourceAsStream("../Resources/HMFMMUEX.ttf"), 50);
 		FXMLLoader loader = 
-				new FXMLLoader(getClass().getResource("eventTest.fxml"));
+				new FXMLLoader(getClass().getResource("../movie_cret/EventTest.fxml"));
 
 		Parent root = loader.load();
 		Scene scene = new Scene(root);

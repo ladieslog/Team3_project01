@@ -2,14 +2,13 @@ package movie_cret;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 
 
 public class Controller implements Initializable{
 	
-	Parent root;
+	static Parent root;
  public void setRoot(Parent root) {
 	 this.root=root;
 
