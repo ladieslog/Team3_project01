@@ -6,23 +6,22 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: yellow;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="movie_cret.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="movie_cret.Controller">
    <children>
       <Button layoutX="719.0" layoutY="38.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="58.0" text="Button" />
       <Button layoutX="719.0" layoutY="99.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="58.0" text="Button" />
       <Button layoutX="719.0" layoutY="152.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="58.0" text="Button" />
-      <ImageView fitHeight="188.0" fitWidth="146.0" layoutX="37.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="188.0" fitWidth="146.0" layoutX="205.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="188.0" fitWidth="146.0" layoutX="43.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="188.0" fitWidth="146.0" layoutX="205.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="188.0" fitWidth="146.0" layoutX="382.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="188.0" fitWidth="146.0" layoutX="546.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="89.0" layoutY="321.0" text="Label" />
+      <Label layoutX="89.0" layoutY="321.0" text="노트북" textFill="#1740c6" />
       <TextField layoutX="43.0" layoutY="272.0" prefHeight="22.0" prefWidth="121.0" />
-      <Label layoutX="263.0" layoutY="321.0" text="Label" />
+      <Label layoutX="254.0" layoutY="321.0" text="라라랜드" textFill="#1740c6" />
       <TextField layoutX="217.0" layoutY="272.0" prefHeight="22.0" prefWidth="121.0" />
-      <Label layoutX="440.0" layoutY="321.0" text="Label" />
+      <Label layoutX="422.0" layoutY="321.0" text="어바웃 타임" textFill="#1740c6" />
       <TextField layoutX="394.0" layoutY="272.0" prefHeight="22.0" prefWidth="121.0" />
-      <Label layoutX="605.0" layoutY="321.0" text="Label" />
-      <TextField layoutX="559.0" layoutY="272.0" prefHeight="22.0" prefWidth="121.0" />
+      <Label layoutX="600.0" layoutY="321.0" text="비긴 어게인" textFill="#1740c6" />
+      <TextField layoutX="571.0" layoutY="272.0" prefHeight="22.0" prefWidth="121.0" />
    </children>
 </AnchorPane>
