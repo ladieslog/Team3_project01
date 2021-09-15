@@ -11,7 +11,8 @@ public class UserMain {
 	public void User() {
 		try {
 			Stage primaryStage = new Stage();
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login/UserLogin.fxml"));
+			FXMLLoader loader = 
+					new FXMLLoader(getClass().getResource("/Login/UserLogin.fxml"));
 			Parent root = loader.load();
 			
 			UserController uc = new UserController();

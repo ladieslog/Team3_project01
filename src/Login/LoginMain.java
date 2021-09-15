@@ -14,8 +14,7 @@ import javafx.stage.Stage;
 		public static void main(String[] args) {
 			launch(args);
 		}
-
-		@Override
+		
 		public void start(Stage primaryStage) throws IOException {
 			// TODO Auto-generated method stub
 			Font.loadFont(getClass().getResourceAsStream("/Resources/HMFMMUEX.ttf"), 50);
@@ -31,6 +30,7 @@ import javafx.stage.Stage;
 			ctl.setRoot(root);
 			
 			primaryStage.setScene(scene);
-			primaryStage.show();		
+			primaryStage.show();	
+			
 		}
 	}
