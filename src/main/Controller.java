@@ -19,7 +19,7 @@ public class Controller implements Initializable{
 	 	seatchart = new seatchart();
 	}
  
- 	public void goseatbtn() {	
+ 	public void goseatbtn() {	// 버튼 클릭시 좌석배치도로 이동	
 		seatchart.start();			
 	}
 

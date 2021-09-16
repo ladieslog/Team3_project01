@@ -13,6 +13,7 @@
          <font>
             <Font name="MoeumT R" size="18.0" />
          </font>
+         
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GREY" height="60.0" layoutX="50.0" layoutY="626.0" stroke="BLACK" strokeType="INSIDE" width="700.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="40.0" layoutX="397.0" layoutY="636.0" stroke="BLACK" strokeType="INSIDE" width="40.0" AnchorPane.leftAnchor="544.0" />
@@ -27,52 +28,52 @@
             <Font name="MoeumT R" size="28.0" />
          </font>
       </Text>
-      <Button fx:id="A1" layoutX="113.0" layoutY="120.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="A1" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="120.0">
+      <Button layoutX="113.0" layoutY="120.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="A1" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="120.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="B1" layoutX="110.0" layoutY="220.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="B1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="220.0">
+      <Button layoutX="110.0" layoutY="220.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="B1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="220.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="110.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="C1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="320.0">
+      <Button layoutX="110.0" layoutY="320.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="C1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="320.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="110.0" layoutY="420.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="D1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="420.0">
+      <Button layoutX="110.0" layoutY="420.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="D1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="420.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="110.0" layoutY="520.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="E1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="520.0">
+      <Button layoutX="110.0" layoutY="520.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="E1" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="520.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="A6" layoutX="600.0" layoutY="120.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="A6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="120.0">
+      <Button layoutX="600.0" layoutY="120.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="A6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="120.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="B6" layoutX="600.0" layoutY="220.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="B6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="220.0">
+      <Button layoutX="600.0" layoutY="220.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="B6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="220.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="600.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="C6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="320.0">
+      <Button layoutX="600.0" layoutY="320.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="C6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="320.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="600.0" layoutY="420.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="D6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="420.0">
+      <Button layoutX="600.0" layoutY="420.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="D6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="420.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="600.0" layoutY="520.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="E6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="520.0">
+      <Button layoutX="600.0" layoutY="520.0" mnemonicParsing="false" onAction="#selectCoupleSeat" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: pink;" text="E6" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="520.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
          </font>
@@ -177,5 +178,16 @@
             <Font name="MoeumT R" size="18.0" />
          </font>
       </Button>
+      <Text fill="#f03f05" layoutX="298.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RANDOM" textAlignment="CENTER">
+         <font>
+            <Font name="MoeumT R" size="50.0" />
+         </font>
+      </Text>
+      <Text fill="#f03f05" layoutX="342.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEAT" textAlignment="CENTER">
+         <font>
+            <Font name="MoeumT R" size="50.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fbfeff" height="486.0" layoutX="251.0" layoutY="102.0" opacity="0.21" stroke="BLACK" strokeType="INSIDE" width="307.0" />
    </children>
 </AnchorPane>
