@@ -21,8 +21,6 @@ import javafx.stage.Stage;
 			FXMLLoader loader = 
 					new FXMLLoader(getClass().getResource("MainScreen.fxml"));
 			
-	//		Label main = new Label("",new ImageView("/main.png"));
-			
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
 

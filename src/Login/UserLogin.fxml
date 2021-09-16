@@ -23,7 +23,7 @@
             <Font name="MoeumT R" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="390.0" layoutY="253.0" mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: black;" text="돌아가기" textFill="WHITE">
+      <Button layoutX="390.0" layoutY="253.0" mnemonicParsing="false" onAction="#goBack" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: black;" text="로그아웃" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="14.0" />
          </font>

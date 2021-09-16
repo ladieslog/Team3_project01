@@ -55,7 +55,7 @@
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font></TextField>
-      <TextField fx:id="fxPwd" layoutX="126.0" layoutY="163.0" prefHeight="22.0" prefWidth="108.0">
+      <TextField fx:id="fxPassword" layoutX="126.0" layoutY="163.0" prefHeight="22.0" prefWidth="108.0">
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font></TextField>
@@ -67,7 +67,7 @@
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font></TextField>
-      <TextField fx:id="fxPhone" layoutX="349.0" layoutY="208.0" prefHeight="22.0" prefWidth="108.0">
+      <TextField fx:id="fxTel" layoutX="349.0" layoutY="208.0" prefHeight="22.0" prefWidth="108.0">
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font></TextField>
@@ -77,7 +77,7 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="fxWoman" layoutX="412.0" layoutY="165.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="37.0" text="여" textFill="WHITE" toggleGroup="$gender" />
-      <Button layoutX="340.0" layoutY="258.0" mnemonicParsing="false" style="-fx-background-color: black;" text="가입하기" textFill="WHITE">
+      <Button layoutX="340.0" layoutY="258.0" mnemonicParsing="false" onAction="#membership" style="-fx-background-color: black;" text="가입하기" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="14.0" />
          </font>

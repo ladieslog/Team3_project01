@@ -15,31 +15,26 @@
             <Image url="@../../../../../../1x/1x/main.png" />
          </image>
       </ImageView>
-      <Button layoutX="240.0" layoutY="148.0" mnemonicParsing="false" onAction="#mainScreen" prefHeight="73.0" prefWidth="60.0" text="로그인">
+      <Button layoutX="240.0" layoutY="156.0" mnemonicParsing="false" onAction="#mainScreen" prefHeight="73.0" prefWidth="60.0" text="로그인">
          <font>
             <Font name="MoeumT R" size="14.0" />
          </font></Button>
-      <Button layoutX="337.0" layoutY="148.0" mnemonicParsing="false" onAction="#membership" style="-fx-background-color: black;" text="회원가입" textFill="WHITE">
+      <Button layoutX="337.0" layoutY="156.0" mnemonicParsing="false" onAction="#membership" style="-fx-background-color: black;" text="회원가입" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="18.0" />
          </font></Button>
-      <Button layoutX="346.0" layoutY="187.0" mnemonicParsing="false" onAction="#cancle" style="-fx-background-color: black;" text="나가기" textFill="WHITE">
+      <Button layoutX="346.0" layoutY="195.0" mnemonicParsing="false" onAction="#cancle" style="-fx-background-color: black;" text="나가기" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="18.0" />
          </font></Button>
-      <TextField layoutX="83.0" layoutY="150.0" prefHeight="30.0" prefWidth="150.0">
+      <TextField fx:id="inId" layoutX="83.0" layoutY="158.0" prefHeight="30.0" prefWidth="150.0">
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font></TextField>
-      <PasswordField layoutX="83.0" layoutY="191.0" prefHeight="30.0" prefWidth="150.0">
+      <PasswordField fx:id="inPassword" layoutX="83.0" layoutY="199.0" prefHeight="30.0" prefWidth="150.0">
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font></PasswordField>
-      <Button layoutX="240.0" layoutY="234.0" mnemonicParsing="false" onAction="#managerLogin" prefHeight="22.0" prefWidth="60.0" text="관리자">
-         <font>
-            <Font name="MoeumT R" size="12.0" />
-         </font>
-      </Button>
          
          
          
