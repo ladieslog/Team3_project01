@@ -11,7 +11,7 @@ public class Mainclass extends Application{
 	
 	public void start(Stage Stage) throws Exception{
 		 
-		Font.loadFont(getClass().getResourceAsStream("../Resources/HMFMMUEX.ttf"), 50);
+		Font.loadFont(getClass().getResourceAsStream("/Resources/HMFMMUEX.ttf"), 50);
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         
         Scene scene = new Scene(root);

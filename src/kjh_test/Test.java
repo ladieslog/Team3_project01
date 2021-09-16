@@ -2,11 +2,14 @@ package kjh_test;
 
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Test extends Application{
@@ -17,12 +20,22 @@ public class Test extends Application{
 	@Override
 	public void start(Stage arg0) throws Exception {
 		// TODO Auto-generated method stub
-		Image roses = new Image(getClass().getResourceAsStream("test.png"));
-		ImageView iv = new ImageView(roses);
-		FlowPane fp = new FlowPane();
-		fp.getChildren().add(iv);
-		Scene scene = new Scene(fp);
+		/*
+		Font.loadFont(getClass().getResourceAsStream("/Resources/HMFMMUEX.ttf"), 50);
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Test.fxml"));
+		Parent root = loader.load();
+		
+		Scene scene = new Scene(root);
 		arg0.setScene(scene);
 		arg0.show();
+		*/
+		
+		Font.loadFont(getClass().getResourceAsStream("/Resources/HMFMMUEX.ttf"), 50);
+        Parent root = FXMLLoader.load(getClass().getResource("Test.fxml"));
+        
+        Scene scene = new Scene(root);
+
+        arg0.setScene(scene);
+        arg0.show();
 	}
 }
