@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 public class UserListController implements Initializable{
 	
 	private static Parent root;
-	private static AnchorPane spap;
 	
 	private static DestinyMovieUserDAO dao = DestinyMovieUserDAO.getInstance();
 	

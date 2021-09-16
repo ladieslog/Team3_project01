@@ -52,8 +52,8 @@ public class WarningController implements Initializable{
 	}
 	
 	public void Cancel() {
-		tv.getItems().clear();
-		con.dbList(tv, id, pwd, name, gender, tel);
+		//tv.getItems().clear();
+		//con.dbList(tv, id, pwd, name, gender, tel);
 		stage.close();
 	}
 	

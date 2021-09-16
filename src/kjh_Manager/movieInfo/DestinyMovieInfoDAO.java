@@ -1,4 +1,4 @@
-package kjh_Manager.userInfo;
+package kjh_Manager.movieInfo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,17 +7,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class DestinyMovieUserDAO {
+public class DestinyMovieInfoDAO {
 	private Connection con;
 	private PreparedStatement ps;
 	private ResultSet rs;
-	private static DestinyMovieUserDAO dao = new DestinyMovieUserDAO();
+	private static DestinyMovieInfoDAO dao = new DestinyMovieInfoDAO();
 	
-	private DestinyMovieUserDAO() {
+	private DestinyMovieInfoDAO() {
 		
 	}
 	
-	public static DestinyMovieUserDAO getInstance() {
+	public static DestinyMovieInfoDAO getInstance() {
 		return dao;
 	}
 	
@@ -34,22 +34,20 @@ public class DestinyMovieUserDAO {
 		return con;
 	}
 	
-	public ArrayList<DestinyMovieUserDTO> selectList() {
+	public ArrayList<DestinyMovieInfoDTO> movieList() {
 		con = connect();
-		ArrayList<DestinyMovieUserDTO> list = new ArrayList<>();
+		ArrayList<DestinyMovieInfoDTO> list = new ArrayList<>();
 		try {
-			ps = con.prepareStatement("SELECT * FROM destinymovie_user");
+			ps = con.prepareStatement("SELECT * FROM destinymovie_info ORDER BY movieNum ASC");
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				DestinyMovieUserDTO dto = new DestinyMovieUserDTO();
-				dto.setName(rs.getString("name"));
-				dto.setId(rs.getString("id"));
-				dto.setPwd(rs.getString("password"));
-				dto.setGender(rs.getString("gender"));
-				dto.setBirth(rs.getTimestamp("birth"));
-				dto.setTel(rs.getString("tel"));
+				DestinyMovieInfoDTO dto = new DestinyMovieInfoDTO();
+				dto.setMovieNum(rs.getInt(1));
+				dto.setMovieName(rs.getString(2));
+				dto.setMovieAvg(rs.getDouble(3));
 				list.add(dto);
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,22 +64,27 @@ public class DestinyMovieUserDAO {
 		return list;
 	}
 	
-	public int removeUser(String id) {
-		int result = 0;
+	public int removeMovie(int movieNum) {
 		con = connect();
+		int result = 0;
 		try {
-			ps = con.prepareStatement("DELETE FROM destinymovie_user WHERE id=?");
-			ps.setString(1, id);
+			ps = con.prepareStatement("DELETE FROM destinymovie_info WHERE movieNum = ?");
+			ps.setInt(1, movieNum);
 			result = ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				ps.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return result;
 	}
-	
-	
-	
 	
 	
 }
