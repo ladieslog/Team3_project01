@@ -118,9 +118,6 @@ public class MemberController implements Initializable{
 		msg="회원가입 성공";
 		al.alert(msg);*/
 	}
-	
-	
-	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

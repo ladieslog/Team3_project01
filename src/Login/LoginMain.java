@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 			
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
-
+			
 			LoginController ctl = new LoginController();
 			ctl.setRoot(root);
 			
