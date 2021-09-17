@@ -1,5 +1,6 @@
 package kjh_Manager.movieInfo;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -13,12 +14,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class MovieListController implements Initializable{
 	private static Parent root;
 	
 	private static DestinyMovieInfoDAO dao = DestinyMovieInfoDAO.getInstance();
+	
 	
 	@FXML
 	private TableView<DestinyMovieInfoDTO> tableView;
@@ -97,9 +100,24 @@ public class MovieListController implements Initializable{
 		}
 	}
 	
+	
 	public void movieAdd() {
-		
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kjh_Manager/movieInfo/MovieAdd.fxml"));
+			Parent newRoot = loader.load();
+			
+			Stage stage = new Stage();
+			stage.setScene(new Scene(newRoot));
+			
+			MovieAddController mac = loader.getController();
+			mac.setRoot(newRoot);
+			
+			stage.show();
+		} catch(Exception e) {
+			
+		}
 	}
+	
 	public void setRoot(Parent root) {
 		this.root = root;
 	}

@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 public class MovieListMain extends Application{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stubn
 		launch(args);
 	}
 	
@@ -24,6 +23,7 @@ public class MovieListMain extends Application{
 		mlc.setRoot(root);
 		arg0.setScene(scene);
 		arg0.show();
+		
 	}
 
 }
