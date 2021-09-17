@@ -36,10 +36,28 @@ public class BlobMain {
 		return fv;
 	}
 	
+	public int test2() {
+		int result = 0;
+		try {
+			PreparedStatement ps = con.prepareStatement("INSERT INTO test values(?)");
+			File file = new File("C:\\movie2.jpg");
+			FileInputStream fis = new FileInputStream(file);
+			
+			ps.setBinaryStream(1, fis);
+			result = ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
+	
+	
 	public int insert() {
 		int result = 0;
 		try {
-			PreparedStatement ps = con.prepareStatement("INSERT INTO destinymovie_info values(2016, '너의 이름은', '10', ?)");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO destinymovie_info values(-2, '너의 이름은', '10', ?)");
 			File file = new File("C:\\movie.jpg");
 			FileInputStream fis = new FileInputStream(file);
 			

@@ -9,12 +9,12 @@
 <AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.movieInfo.MovieAddController">
    <children>
       <ImageView fx:id="movieImage" fitHeight="226.0" fitWidth="157.0" layoutX="73.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="movieName" layoutX="81.0" layoutY="320.0" prefHeight="30.0">
+      <TextField fx:id="movieName" layoutX="81.0" layoutY="320.0" prefHeight="30.0" promptText="영화 제목">
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="movieAvg" layoutX="81.0" layoutY="368.0" prefHeight="30.0">
+      <TextField fx:id="movieAvg" layoutX="81.0" layoutY="368.0" prefHeight="30.0" promptText="영화 평점">
          <font>
             <Font name="MoeumT R" size="12.0" />
          </font>

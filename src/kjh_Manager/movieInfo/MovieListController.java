@@ -111,6 +111,7 @@ public class MovieListController implements Initializable{
 			
 			MovieAddController mac = loader.getController();
 			mac.setRoot(newRoot);
+			mac.setDAO(dao);
 			
 			stage.show();
 		} catch(Exception e) {

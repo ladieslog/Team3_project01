@@ -1,5 +1,6 @@
 package kjh_Manager.movieInfo;
 
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -84,6 +85,45 @@ public class DestinyMovieInfoDAO {
 			}
 		}
 		return result;
+	}
+	
+	public int getMovieNum() {
+		int result = 0;
+		con = connect();
+		try {
+			ps = con.prepareStatement("SELECT MAX(movieNUM) FROM destinymovie_info");
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				ps.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
+	public int insertMovie(DestinyMovieInfoDTO dto, FileInputStream fis) {
+		int result = 0;
+		try {
+			ps = con.prepareStatement("INSERT INTO destinymovie_info values(?, ?, ?, ?)");
+			ps.setInt(1, dto.getMovieNum());
+			ps.setString(2, dto.getMovieName());
+			ps.setDouble(3, dto.getMovieAvg());
+			ps.setBinaryStream(4, fis, (int)fis);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

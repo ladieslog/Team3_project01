@@ -11,10 +11,11 @@ public class Blob {
 		// TODO Auto-generated method stub
 		
 		BlobMain bm = new BlobMain();
-		
-		int result = bm.insert();
-		System.out.println(result);
 		/*
+		int result = bm.test2();
+		System.out.println(result);
+		*/
+		
 		FileVO fv = bm.test();
 		
 		File file = new File("src/img/a6.png");
@@ -24,7 +25,7 @@ public class Blob {
 		
 		fos.write(fv.getBlob());
 		fos.close();
-		*/
+		
 		
 		
 		

@@ -25,7 +25,7 @@ public class BlobTest {
             
             File f = new File("C:\\Users\\wnsgh\\javafx-workspace\\Team3_project01\\src\\img/a1.png");    
             FileInputStream fis = new FileInputStream(f);
-            
+            // 파일 테스트
             stmt = con.prepareStatement("insert into test values(?)");
             stmt.setBinaryStream(1, fis,(int)f.length());
             int rownum = stmt.executeUpdate();
