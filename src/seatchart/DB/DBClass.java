@@ -10,7 +10,6 @@ public class DBClass {
 	public DBClass() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@210.221.253.215:1521:xe", "team03", "3333");
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -19,9 +18,9 @@ public class DBClass {
 	
 	
 	public MovieDTO readDB_User(String InputId) {
+		System.out.println("readDB_User실행");
 		String sql = "select * from destinymovie_user where id= '"+InputId+ "'";
 		MovieDTO dto = null;
-		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery(); 
@@ -37,32 +36,28 @@ public class DBClass {
 		return dto;
 	}
 	
-	public MovieDTO readDB_Seat(String InputId) {
-		String sql = "select * from destinymovie_seat where id= '"+InputId+ "'";
-		MovieDTO dto = null;
-				
+	public MovieDTO readDB_Seat(int movieNum, String screeningtime, String[] arr) {	// 이미 예매완료된 좌석 표시를 위함
+		System.out.println("readDB_Seat실행");
+		String sql = "select seat from destinymovie_seat where reservation= '1' and movienum = "+movieNum+ "and screeningtime = '"+screeningtime+"'";
+		MovieDTO dto = null;	
+		int i=0;
+		
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery(); 
-					
-			if(rs.next()) {
+			System.out.print(screeningtime + "-"+ movieNum +"번 영화 예매된 좌석 :");
+			while(rs.next()) {
 				dto = new MovieDTO();
-				dto.setId(rs.getString("id"));
-				System.out.println(dto.getId());
-				dto.setMovieNum(rs.getInt("movienum"));
-				System.out.println("movienum : " + dto.getMovieNum());
-				dto.setSeat(rs.getString("seat"));
-				System.out.println("seat : " + dto.getSeat());
-				dto.setReservation(rs.getInt("reservation"));
-				System.out.println("reservation : " + dto.getReservation());
-						
-				dto.setId(rs.getString("id"));
-				System.out.println(dto.getId());
+				dto.setSeat(i, rs.getString("seat"));
+				arr[i] = dto.getSeat(i);
+				System.out.print(dto.getSeat(i++) + " ");
+				
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		return dto;
+		
 	}
 	
 	public int insertDB(MovieDTO dto) {
@@ -75,7 +70,7 @@ public class DBClass {
 			ps.setString(1, dto.getId());
 			ps.setInt(2, dto.getMovieNum());
 			ps.setDate(3, dto.getScreeningTime());
-			ps.setString(4, dto.getSeat());
+			//ps.setString(4, dto.getSeat());
 			ps.setInt(5, dto.getReservation());
 			ps.setInt(6, dto.getPrice());
 			result = ps.executeUpdate();

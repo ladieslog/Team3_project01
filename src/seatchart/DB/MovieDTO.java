@@ -8,7 +8,7 @@ public class MovieDTO {
 	private String password;
 	private int movieNum;
 	private Date screeningTime;
-	private String seat;
+	private String[] seat = new String[30];
 	private int reservation;
 	private int price;
 	
@@ -38,11 +38,11 @@ public class MovieDTO {
 	public void setScreeningTime(Date screeningTime) {
 		this.screeningTime = screeningTime;
 	}
-	public String getSeat() {
-		return seat;
+	public String getSeat(int i) {
+		return seat[i];
 	}
-	public void setSeat(String seat) {
-		this.seat = seat;
+	public void setSeat(int i, String seat) {
+		this.seat[i] = seat;
 	}
 	public int getReservation() {
 		return reservation;
@@ -51,7 +51,6 @@ public class MovieDTO {
 	public void setReservation(int resrtvation) {
 		this.reservation = resrtvation;
 	}
-	
 	
 	public String getName() {
 		return name;
