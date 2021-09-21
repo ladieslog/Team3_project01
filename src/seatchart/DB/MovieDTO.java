@@ -5,7 +5,6 @@ import java.sql.Date;
 public class MovieDTO {
 	private String id;
 	private String name;
-	private String password;
 	private int movieNum;
 	private Date screeningTime;
 	private String[] seat = new String[30];
@@ -59,11 +58,5 @@ public class MovieDTO {
 		this.name = name;
 		
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password ) {
-		this.password = password;
-		
-	}
+
 }

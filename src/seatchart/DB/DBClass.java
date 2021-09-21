@@ -45,13 +45,12 @@ public class DBClass {
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery(); 
-			System.out.print(screeningtime + "-"+ movieNum +"번 영화 예매된 좌석 :");
+			System.out.println(screeningtime + "-"+ movieNum +"번 영화 조회");
 			while(rs.next()) {
 				dto = new MovieDTO();
 				dto.setSeat(i, rs.getString("seat"));
 				arr[i] = dto.getSeat(i);
-				System.out.print(dto.getSeat(i++) + " ");
-				
+				i++;
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -61,8 +60,8 @@ public class DBClass {
 	}
 	
 	public int insertDB(MovieDTO dto) {
-		setData();
-		String sql = "insert into (id, movienum, screeningtime, seat, reservation, price) "
+		//setData();
+		String sql = "insert into destinymovie_seat(id, movienum, screeningtime, seat, reservation, price) "
 				+ "values(?,?,?,?,?,?)";
 		int result = 0;
 		try {
