@@ -10,15 +10,15 @@
    <children>
       <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../1x/1x/manager.png" />
+            <Image url="@../../../../../../../../../ojdbc6/manager.png" />
          </image>
       </ImageView>
-      <Button layoutX="112.0" layoutY="149.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: black;" text="회원목록" textFill="WHITE">
+      <Button layoutX="112.0" layoutY="149.0" mnemonicParsing="false" onAction="#memberList" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: black;" text="회원목록" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="290.0" layoutY="149.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" style="-fx-background-color: black;" text="영화관리" textFill="WHITE">
+      <Button layoutX="290.0" layoutY="149.0" mnemonicParsing="false" onAction="#movieManagement" prefHeight="41.0" prefWidth="96.0" style="-fx-background-color: black;" text="영화관리" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="18.0" />
          </font>

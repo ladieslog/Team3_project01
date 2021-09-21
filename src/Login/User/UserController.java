@@ -17,10 +17,24 @@ public class UserController implements Initializable {
 		this.root = root;
 	}
 	
-	public void goBack() {
-		back.back();
+	public void cancle() {
 		Stage primaryStage = (Stage)root.getScene().getWindow();
 		primaryStage.close();
+	}
+	
+	public void goBack() {
+		back.back();
+		cancle();
+	}
+	
+	public void movieReservation() {
+		
+		cancle();
+	}
+	
+	public void moviePurchase() {
+		
+		cancle();
 	}
 	
 	@Override

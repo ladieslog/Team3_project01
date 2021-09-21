@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="308.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../1x/1x/main.png" />
+            <Image url="@../../../../../../../../../ojdbc6/main.png" />
          </image>
       </ImageView>
       <Button layoutX="240.0" layoutY="156.0" mnemonicParsing="false" onAction="#mainScreen" prefHeight="73.0" prefWidth="60.0" text="로그인">
@@ -23,7 +23,7 @@
          <font>
             <Font name="MoeumT R" size="18.0" />
          </font></Button>
-      <Button layoutX="346.0" layoutY="195.0" mnemonicParsing="false" onAction="#cancle" style="-fx-background-color: black;" text="나가기" textFill="WHITE">
+      <Button layoutX="346.0" layoutY="195.0" mnemonicParsing="false" onAction="#backMovie" style="-fx-background-color: black;" text="나가기" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="18.0" />
          </font></Button>

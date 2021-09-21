@@ -17,11 +17,25 @@ public class ManagerController implements Initializable {
 		this.root = root;
 	}
 	
-	public void goBack() {
-		back.back();
+	public void cancle() {
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}
+	
+	public void goBack() {
+		back.back();
+		cancle();
+	}
+	
+	public void memberList() {
+		
+	}
+	
+	public void movieManagement() {
+		
+	}
+	
+	
 	
 	
 	@Override

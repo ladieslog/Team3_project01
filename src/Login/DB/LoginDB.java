@@ -9,9 +9,7 @@ import java.sql.Connection;
 
 
 public class LoginDB {
-	
 	public Connection conn;
-	
 	public LoginDB() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");

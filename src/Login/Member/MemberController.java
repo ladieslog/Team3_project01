@@ -76,9 +76,14 @@ public class MemberController implements Initializable{
 		RadioButton fxMan = (RadioButton)root.lookup("#fxMan");
 		RadioButton fxWoman = (RadioButton)root.lookup("#fxWoman");
 		String msg= null;
+	//	loginDb.loginchk(getId());
 		if(fxId.getText().isEmpty()){
 			msg = "ID를 입력하세요";
 			fxId.requestFocus();
+		/*	if(fxId.getText().equals(loginDb.loginchk(getId()) {
+				msg = "중복된 ID입니다";
+				fxId.requestFocus();
+			}*/
 		}else if(fxPassword.getText().isEmpty()) {
 			msg = "Password를 입력하세요";
 			fxPassword.requestFocus();
@@ -98,9 +103,9 @@ public class MemberController implements Initializable{
 			dto.setId(getId());
 			dto.setPassword(getPassword());
 			dto.setName(getName());
-			dto.setBirth(getBirth());
-			dto.setTel(getTel());
 			dto.setGender(getGender());
+			dto.setTel(getTel());
+			dto.setBirth(getBirth());		
 			loginDb.insert(dto);
 			back();  
 			msg="회원가입 성공";

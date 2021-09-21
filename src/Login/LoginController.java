@@ -24,6 +24,7 @@ public class LoginController implements Initializable {
 	ManagerMain manager;
 	Login.DB.LoginDB db;
 	Login.Alert.AlertClass al;
+	MovieBack movie;
 	// 화면 옮길때마다 화면 꺼지고 돌아가기에서 다시 돌아와야함
 	// 폰트   MoeumT R
 	public void setRoot(Parent root) {
@@ -63,17 +64,23 @@ public class LoginController implements Initializable {
 				pwd.requestFocus();
 			}
 		}
+
 		al.alert(msg);
-		System.out.println(dto.getId());
-		System.out.println(dto.getPassword());
+	
+		
 	}
 	
-	public void userLogin() {		// user 로그인 완료 후 뜨는 창
+/*	public void userLogin() {		// user 로그인 완료 후 뜨는 창
 		user.User();
 	}
 	
 	public void managerLogin() {	// 관리자 로그인 완료 후 뜨는 창
 		manager.manager();
+		cancle();
+	}*/
+	
+	public void backMovie() {
+		movie.movieBack();
 		cancle();
 	}
 	
@@ -90,6 +97,7 @@ public class LoginController implements Initializable {
 		manager = new ManagerMain();
 		db = new Login.DB.LoginDB();
 		al = new Login.Alert.AlertClass();
+		movie = new MovieBack();
 	}
 	
 	
