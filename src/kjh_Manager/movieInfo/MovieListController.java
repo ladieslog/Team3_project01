@@ -39,6 +39,9 @@ public class MovieListController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		dbMovieList(tableView, movieNum, movieName, movieAvg);
+		/*
 		movieNum = tableView.getColumns().get(0);
 		movieNum.setCellValueFactory(new PropertyValueFactory("movieNum"));
 		
@@ -54,6 +57,7 @@ public class MovieListController implements Initializable{
 		for(DestinyMovieInfoDTO dto : list) {
 			tableView.getItems().add(dto);
 		}
+		*/
 	}
 	
 	public static void dbMovieList(TableView<DestinyMovieInfoDTO> tableView, TableColumn movieNum, TableColumn movieName, TableColumn movieAvg) {
@@ -112,7 +116,7 @@ public class MovieListController implements Initializable{
 			MovieAddController mac = loader.getController();
 			mac.setRoot(newRoot);
 			mac.setDAO(dao);
-			
+			mac.setTable(tableView, movieNum, movieName, movieAvg);
 			stage.show();
 		} catch(Exception e) {
 			

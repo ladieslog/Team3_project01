@@ -9,6 +9,8 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,6 +24,11 @@ public class MovieAddController implements Initializable{
 	private static File file;
 
 	private static DestinyMovieInfoDAO dao;
+	
+	private TableView<DestinyMovieInfoDTO> tv;
+	private TableColumn controllerMovieNum;
+	private TableColumn controllerMovieName;
+	private TableColumn controllerMovieAvg;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -70,9 +77,9 @@ public class MovieAddController implements Initializable{
 			return;
 		}
 		
-		// Double age = 0.0;
+		Double age = 0.0;
 		try {
-		Double age = Double.parseDouble(movieAvg.getText());
+		age = Double.parseDouble(movieAvg.getText());
 		} catch(Exception e) {
 			System.out.println("숫자를 입력해주세요");
 			return;
@@ -86,15 +93,30 @@ public class MovieAddController implements Initializable{
 			e.printStackTrace();
 		}
 		int movieNum = dao.getMovieNum() + 1;
+		DestinyMovieInfoDTO dto = new DestinyMovieInfoDTO();
+		
+		dto.setMovieNum(movieNum);
+		dto.setMovieName(movieName.getText());
+		dto.setMovieAvg(age);
 		System.out.println(movieNum);
-		System.out.println(fis);
-		
-		
+		int result = dao.insertMovie(dto, fis);
+		System.out.println(result);
+		tv.getItems().clear();
+		MovieListController.dbMovieList(tv, controllerMovieNum, controllerMovieName, controllerMovieAvg);
+		stage = (Stage)root.getScene().getWindow();
+		stage.close();
 	}
 	
 	public void back() {
 		stage = (Stage)root.getScene().getWindow();
 		stage.close();
+	}
+	
+	public void setTable(TableView<DestinyMovieInfoDTO> tv, TableColumn movieNum, TableColumn movieName, TableColumn movieAvg) {
+		this.tv = tv;
+		this.controllerMovieNum = movieNum;
+		this.controllerMovieName = movieName;
+		this.controllerMovieAvg = movieAvg;
 	}
 	
 	public void setRoot(Parent root) {

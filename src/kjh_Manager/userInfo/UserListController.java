@@ -48,44 +48,8 @@ public class UserListController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		id = tableView.getColumns().get(0);
-		id.setCellValueFactory(new PropertyValueFactory("id"));
+		dbList(tableView, id, pwd, name, gender, tel);
 		
-		pwd = tableView.getColumns().get(1);
-		pwd.setCellValueFactory(new PropertyValueFactory("pwd"));
-		
-		name = tableView.getColumns().get(2);
-		name.setCellValueFactory(new PropertyValueFactory("name"));
-		
-		gender = tableView.getColumns().get(3);
-		gender.setCellValueFactory(new PropertyValueFactory("gender"));
-		
-		tel = tableView.getColumns().get(4);
-		tel.setCellValueFactory(new PropertyValueFactory("tel"));
-		
-		ArrayList<DestinyMovieUserDTO> list = dao.selectList();
-		
-		for(DestinyMovieUserDTO dto : list) {
-			if(dto.getGender().equals("0")) {
-				dto.setGender("남성");
-			} else {
-				dto.setGender("여성");
-			}
-			tableView.getItems().add(dto);
-		}
-		
-		/*
-		
-		
-		DTO dto = new DTO();
-		dto.setId("wnsgh9978");
-		dto.setPwd("1234");
-		dto.setName("김준호");
-		dto.setGender("중성");
-		dto.setTel("010-5609-2044");
-		
-		tableView.getItems().add(dto);
-		*/
 	}
 	
 	public void dbList(TableView<DestinyMovieUserDTO> tv, TableColumn id, TableColumn pwd, TableColumn name, TableColumn gender, TableColumn tel) {
