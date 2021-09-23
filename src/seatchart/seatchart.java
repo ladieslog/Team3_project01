@@ -20,7 +20,7 @@ import seatchart.DB.DBClass;
 import seatchart.payment.payment;
 
 
-public class seatchart implements Initializable{
+public class seatchart extends Thread implements Initializable{
 	@FXML private Button A1;
 	@FXML private Button A2;
 	@FXML private Button A3;
@@ -53,7 +53,7 @@ public class seatchart implements Initializable{
 	@FXML private Button E6;
 	@FXML private Rectangle Rect;
 	@FXML private Rectangle RandomSeat;
-	
+
 	DBClass db = new DBClass();
 	payment payment = new payment();
 	String arr[] = new String[30];
@@ -72,7 +72,6 @@ public class seatchart implements Initializable{
 			Stage primaryStage = new Stage();
 			FXMLLoader loader = 
 					new FXMLLoader(getClass().getResource("/seatchart/seatchart.fxml"));
-			 
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
 			seatchart ctl = loader.getController();						
@@ -84,6 +83,7 @@ public class seatchart implements Initializable{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public void exit() {
@@ -124,7 +124,6 @@ public class seatchart implements Initializable{
 	}
 	
 	public void reservedSeat(int movieNum, String time) {	// 이미 예매되어있는 좌석 표시
-		
 		db.readDB_Seat(movieNum, time, arr);
 		System.out.println("readDB_Seat 완료");
 		for(int j=0 ; j<arr.length ; j++) {	// 간소화 필요
@@ -168,7 +167,7 @@ public class seatchart implements Initializable{
 		Alert alert =new Alert(AlertType.INFORMATION);
 		alert.setTitle("알려드립니다.");
 		alert.setHeaderText("연인 좌석과 인연좌석의 자리 배정,");
-		alert.setContentText("연인 좌석은 지정 배정\n인연 좌석은 랜덤 배정됩니다");	
+		alert.setContentText("연인 좌석은 지정 배정\n인연 좌석은 랜덤 배정됩니다");
 		alert.show();
 	}
 
@@ -177,34 +176,33 @@ public class seatchart implements Initializable{
 		checkseatbtn.setOnAction(event->handleBtnStart(event));
 	}
 	
-	public void ClickRandomSeat() {
-		getRandomSeatNum();
-		Stage window = (Stage)RandomSeat.getScene().getWindow(); 
-		window.close();
-		payment.start();
-	}
-	
 	public void ClickCoupleSeat(ActionEvent e) {
 		String couplechoice = ((Button)e.getTarget()).getText();
-		System.out.println(couplechoice);
+		System.out.println("선택 좌석 : " + couplechoice);
+		db.insertDB("test22", 3, "21/08/06" , couplechoice, 0, 40000);
 		Stage window = (Stage)RandomSeat.getScene().getWindow(); 
 		window.close();
 		payment.start();
 	}
 	
-	public void getRandomSeatNum() {	//	랜덤 좌석 생성
+	public void ClickRandomSeat() {
+		String seat ;
+		while(true) {
+			seat = getRandomSeatNum();
+			System.out.println(seat);
+			if(!contain(seat)) break;
+		}
+		db.insertDB("test22", 3, "21/08/06" , seat, 0, 20000);
+		Stage window = (Stage)RandomSeat.getScene().getWindow(); 
+		window.close();
+		payment.start();
+	}
+	
+	public String getRandomSeatNum() {	//	랜덤 좌석 생성
 		int randNum = (int)(Math.random()*20);
 		System.out.println("랜덤 결과 : " + randomSeatNum[randNum]);
-		String result = randomSeatNum[randNum];
-		System.out.println(result);
-		if(contain(result)){
-			System.out.println("중복 발견!!");
-			getRandomSeatNum();
-		}
-		else {
-			System.out.println("중복 없음");
-			
-		}
+		String randomResult = randomSeatNum[randNum];
+		return randomResult;
 	}
 	
 	public boolean contain(String s) {	//	중복 확인
@@ -212,7 +210,6 @@ public class seatchart implements Initializable{
 		System.out.println("contain 시작");
 		for(int i=0; i<arr.length; i++) {
 			if(arr[i]!=null) {
-				System.out.println(arr[i]);
 				if(arr[i].equals(s)) {
 					isC=true;	
 					break;
@@ -223,30 +220,24 @@ public class seatchart implements Initializable{
 	}
 		
 	@FXML private Button checkseatbtn;
-	
-		
-	public void handleBtnStart(ActionEvent e) {	//좌석 갱신
-		Thread thread = new Thread() {
-			@Override
-			public void run() {
-				while(true) {
-					if(Thread.interrupted()) {break;}
-					Platform.runLater(()->{
-						checkseatbtn.setText("갱신중..");
-						reservedSeat(2, "21/08/06");
-						if(Controller.flag==true) CoupleSeatView();
-						else  RandomSeatView();
-					});
-					try { Thread.sleep(3000); }
-					catch (InterruptedException e) {
-						System.out.println("인터럽트 발생");
-						break;
-					}
-				}	
-			};
-		};
-		thread.setDaemon(true);
-		thread.start();
-	}
-}
-
+ 	public void handleBtnStart(ActionEvent e) {	//좌석 갱신
+ 		Thread thread = new Thread() {
+ 			@Override
+ 			public void run() {
+ 				Platform.runLater(()->{
+ 					checkseatbtn.setText("갱신완료");
+ 					reservedSeat(3, "21/08/06");
+ 					if(Controller.flag==true) CoupleSeatView();
+ 					else  RandomSeatView();
+ 				});
+ 				try { Thread.sleep(1000); }
+ 				catch (InterruptedException e) {
+ 					System.out.println("인터럽트 발생");
+ 				}	
+ 			};
+ 		};
+ 		thread.setDaemon(true);
+ 		thread.start();
+ 	}
+ }
+ 
