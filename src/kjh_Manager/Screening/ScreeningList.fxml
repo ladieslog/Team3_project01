@@ -11,11 +11,12 @@
    <children>
       <ScrollPane fx:id="sp" layoutX="41.0" layoutY="55.0" prefHeight="325.0" prefWidth="225.0">
          <content>
-            <TableView fx:id="tableView" prefHeight="323.0" prefWidth="302.0">
+            <TableView fx:id="tableView" prefHeight="323.0" prefWidth="347.0">
               <columns>
                 <TableColumn fx:id="movieName" prefWidth="125.0" text="영화 제목" />
                 <TableColumn fx:id="screeningTime" prefWidth="100.0" text="상영시간" />
-                 <TableColumn fx:id="seat" prefWidth="75.0" text="좌석현황" />
+                 <TableColumn fx:id="coupleSeat" prefWidth="60.0" text="커플좌석" />
+                  <TableColumn fx:id="soloSeat" prefWidth="60.0" text="솔로좌석" />
               </columns>
             </TableView>
          </content>

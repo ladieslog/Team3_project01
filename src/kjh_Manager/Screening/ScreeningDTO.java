@@ -7,7 +7,8 @@ public class ScreeningDTO {
 	private String movieName;
 	private Timestamp screeningTime;
 	private String time;
-	private String seat;
+	private String coupleSeat;
+	private String soloSeat;
 	
 	public int getMovieNum() {
 		return movieNum;
@@ -33,11 +34,17 @@ public class ScreeningDTO {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public String getSeat() {
-		return seat;
+	public String getCoupleSeat() {
+		return coupleSeat;
 	}
-	public void setSeat(String seat) {
-		this.seat = seat;
+	public void setCoupleSeat(String coupleSeat) {
+		this.coupleSeat = coupleSeat;
+	}
+	public String getSoloSeat() {
+		return soloSeat;
+	}
+	public void setSoloSeat(String soloSeat) {
+		this.soloSeat = soloSeat;
 	}
 	
 	

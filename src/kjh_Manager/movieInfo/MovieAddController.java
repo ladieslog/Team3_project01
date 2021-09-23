@@ -9,12 +9,16 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 public class MovieAddController implements Initializable{
@@ -37,43 +41,45 @@ public class MovieAddController implements Initializable{
 	
 	public void imageAdd() {
 		FileChooser fileChooser = new FileChooser();
-		file = fileChooser.showOpenDialog(stage);
 		
+		ExtensionFilter imgType = new ExtensionFilter("image file", "*.jpg", "*.gif", "*.png", "*.jpeg");
+		fileChooser.getExtensionFilters().addAll(imgType);
+		
+		file = fileChooser.showOpenDialog(stage);
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream(file);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			ImageView iv = (ImageView) root.lookup("#movieImage");
+			Image image = new Image(fis);
+			
+			iv.setImage(image);
+		} catch (Exception e) {
+			System.out.println("파일 선택 안함");
 		}
-		
-		ImageView iv = (ImageView) root.lookup("#movieImage");
-		Image image = new Image(fis);
-		
-		iv.setImage(image);
-		
+	
 		try {
 			fis.close();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	
 	public void movieAdd() {
 		TextField movieName = (TextField) root.lookup("#movieName");
 		TextField movieAvg = (TextField) root.lookup("#movieAvg");
+		TextArea movieComtentArea = (TextArea) root.lookup("#movieComent");
 		
 		if(file == null) {
-			System.out.println("이미지를 추기해주세요");
+			alertShow("이미지를 추기해주세요");
 			return;
 		}
 		if(movieName.getText().equals("")) {
-			System.out.println("영화 제목을 적어주세요");
+			alertShow("영화 제목을 입력해주세요");
 			return;
 		}
 		if(movieAvg.getText().equals("")) {
-			System.out.println("영화 평점을 입력해주세요");
+			alertShow("영화 평점을 입력해주세요");
 			return;
 		}
 		
@@ -81,9 +87,11 @@ public class MovieAddController implements Initializable{
 		try {
 		age = Double.parseDouble(movieAvg.getText());
 		} catch(Exception e) {
-			System.out.println("숫자를 입력해주세요");
+			alertShow("숫자를 입력해 주세요");
 			return;
 		}
+		
+		String movieComtent = movieComtentArea.getText();
 		
 		FileInputStream fis = null;
 		try {
@@ -98,8 +106,8 @@ public class MovieAddController implements Initializable{
 		dto.setMovieNum(movieNum);
 		dto.setMovieName(movieName.getText());
 		dto.setMovieAvg(age);
-		System.out.println(movieNum);
-		int result = dao.insertMovie(dto, fis);
+		
+		int result = dao.insertMovie(dto, fis, movieComtent);
 		System.out.println(result);
 		tv.getItems().clear();
 		MovieListController.dbMovieList(tv, controllerMovieNum, controllerMovieName, controllerMovieAvg);
@@ -110,6 +118,12 @@ public class MovieAddController implements Initializable{
 	public void back() {
 		stage = (Stage)root.getScene().getWindow();
 		stage.close();
+	}
+	
+	public void alertShow(String message) {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setContentText(message);
+		alert.show();
 	}
 	
 	public void setTable(TableView<DestinyMovieInfoDTO> tv, TableColumn movieNum, TableColumn movieName, TableColumn movieAvg) {

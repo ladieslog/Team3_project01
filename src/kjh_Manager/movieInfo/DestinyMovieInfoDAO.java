@@ -73,8 +73,7 @@ public class DestinyMovieInfoDAO {
 			ps.setInt(1, movieNum);
 			result = ps.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return 2;
 		} finally {
 			try {
 				ps.close();
@@ -112,15 +111,16 @@ public class DestinyMovieInfoDAO {
 		return result;
 	}
 	
-	public int insertMovie(DestinyMovieInfoDTO dto, FileInputStream fis) {
+	public int insertMovie(DestinyMovieInfoDTO dto, FileInputStream fis, String movieComtent) {
 		int result = 0;
 		con = connect();
 		try {
-			ps = con.prepareStatement("INSERT INTO destinymovie_info values(?, ?, ?, ?)");
+			ps = con.prepareStatement("INSERT INTO destinymovie_info values(?, ?, ?, ?, ?)");
 			ps.setInt(1, dto.getMovieNum());
 			ps.setString(2, dto.getMovieName());
 			ps.setDouble(3, dto.getMovieAvg());
 			ps.setBinaryStream(4, fis);
+			ps.setString(5, movieComtent);
 			result = ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

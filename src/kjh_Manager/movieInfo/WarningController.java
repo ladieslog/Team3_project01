@@ -5,9 +5,11 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import kjh_Manager.userInfo.DestinyMovieUserDTO;
 
@@ -58,7 +60,13 @@ public class WarningController implements Initializable{
 	
 	public void remove() {
 		int result = dao.removeMovie(movieNumck);
+		// result가 2일시 알럿창 실행
 		System.out.println(result);
+		if(result == 2) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setContentText("현재 영화가 예매 중이므로 삭제가 불가능합니다");
+			alert.show();
+		}
 		tv.getItems().clear();
 		MovieListController.dbMovieList(tv, movieNum, movieName, movieAvg);
 		stage.close();
