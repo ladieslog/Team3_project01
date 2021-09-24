@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningAddCheckController">
+<AnchorPane prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningAddCheckController">
 	<children>
       <Label layoutX="73.0" layoutY="22.0" text="추가하시겠습니까 ?">
          <font>

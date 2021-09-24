@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.movieInfo.MovieAddController">
+<AnchorPane prefHeight="700.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.movieInfo.MovieAddController">
    <children>
       <ImageView fx:id="movieImage" fitHeight="226.0" fitWidth="157.0" layoutX="73.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
       <TextField fx:id="movieName" layoutX="80.0" layoutY="320.0" prefHeight="30.0" promptText="영화 제목">

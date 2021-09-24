@@ -23,9 +23,9 @@ public class UserListController implements Initializable{
 	
 	private static Parent root;
 	
-	private static DestinyMovieUserDAO dao = DestinyMovieUserDAO.getInstance();
+	private static DestinyMovieUserDAO dao = DestinyMovieUserDAO.getInstance(); // DAO
 	
-	private static DestinyMovieUserDTO checkedDto;
+	private static DestinyMovieUserDTO checkedDto; // 테이블에서 선택된 데이터
 	
 	
 	
@@ -52,6 +52,7 @@ public class UserListController implements Initializable{
 		
 	}
 	
+	// 테이블뷰 데이터 업로드
 	public void dbList(TableView<DestinyMovieUserDTO> tv, TableColumn id, TableColumn pwd, TableColumn name, TableColumn gender, TableColumn tel) {
 		TableView<DestinyMovieUserDTO> tvcp = tv;
 		TableColumn idcp = id;
@@ -89,7 +90,7 @@ public class UserListController implements Initializable{
 	}
 	
 	public void checked(MouseEvent event) {
-		checkedDto = tableView.getSelectionModel().getSelectedItem();
+		checkedDto = tableView.getSelectionModel().getSelectedItem(); // 현재 테이블에서 선택된 데이터
 	}
 	
 	public void userRemove() {
@@ -120,18 +121,7 @@ public class UserListController implements Initializable{
 	
 	public void setRoot(Parent root) {
 		this.root = root;
-		// ScrollPane sp = (ScrollPane) root.lookup("#sp");
-		// System.out.println(sp);
 		
-		
-		/*
-		TableView table = new TableView();
-		table.resize(223, 323);
-		
-		spap.getChildren().add(table);
-		*/
-		
-		//sp_ap.getChildren().add(label);
 	}
 	
 	

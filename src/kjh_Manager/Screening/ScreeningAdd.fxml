@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ap" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningAddController">
+<AnchorPane fx:id="ap" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #ffffff;" stylesheets="@../../kjh_css/tableViewStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningAddController">
    <children>
       <Label layoutX="32.0" layoutY="33.0" text="영화선택">
          <font>

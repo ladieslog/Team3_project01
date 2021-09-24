@@ -35,7 +35,7 @@ public class WarningController implements Initializable{
 	
 	public void setCheckId(String checkId) {
 		this.checkId = checkId;
-		userId.setText(checkId + ")");
+		userId.setText(checkId + ")"); // 테이블에서 선택한 영화제목
 	}
 	
 	public void setStage(Stage stage) {
@@ -52,8 +52,6 @@ public class WarningController implements Initializable{
 	}
 	
 	public void Cancel() {
-		//tv.getItems().clear();
-		//con.dbList(tv, id, pwd, name, gender, tel);
 		stage.close();
 	}
 	

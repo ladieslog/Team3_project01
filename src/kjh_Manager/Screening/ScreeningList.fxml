@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ap" prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningListController">
+<AnchorPane fx:id="ap" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" stylesheets="@../../kjh_css/tableViewStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningListController">
    <children>
       <ScrollPane fx:id="sp" layoutX="41.0" layoutY="55.0" prefHeight="325.0" prefWidth="225.0">
          <content>
-            <TableView fx:id="tableView" prefHeight="323.0" prefWidth="347.0">
+            <TableView fx:id="tableView" prefHeight="323.0" prefWidth="373.0">
               <columns>
                 <TableColumn fx:id="movieName" prefWidth="125.0" text="영화 제목" />
-                <TableColumn fx:id="screeningTime" prefWidth="100.0" text="상영시간" />
+                <TableColumn fx:id="screeningTime" prefWidth="125.0" text="상영시간" />
                  <TableColumn fx:id="coupleSeat" prefWidth="60.0" text="커플좌석" />
                   <TableColumn fx:id="soloSeat" prefWidth="60.0" text="솔로좌석" />
               </columns>

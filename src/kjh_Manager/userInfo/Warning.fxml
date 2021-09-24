@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.userInfo.WarningController">
+<AnchorPane prefHeight="150.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.userInfo.WarningController">
   <children>
       <Label layoutX="61.0" layoutY="25.0" text="정말 삭제하시겠습니까 ?">
          <font>

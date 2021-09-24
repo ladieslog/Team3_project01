@@ -34,6 +34,7 @@ public class DestinyMovieUserDAO {
 		return con;
 	}
 	
+	// DB에 저장된 전체 유저 정보 조회
 	public ArrayList<DestinyMovieUserDTO> selectList() {
 		con = connect();
 		ArrayList<DestinyMovieUserDTO> list = new ArrayList<>();
@@ -66,6 +67,7 @@ public class DestinyMovieUserDAO {
 		return list;
 	}
 	
+	// 회원 삭제
 	public int removeUser(String id) {
 		int result = 0;
 		con = connect();
