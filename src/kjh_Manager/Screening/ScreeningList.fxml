@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ap" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" stylesheets="@../../kjh_css/tableViewStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningListController">
+<AnchorPane fx:id="ap" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" stylesheets="@../../css/TableViewStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.Screening.ScreeningListController">
    <children>
       <ScrollPane fx:id="sp" layoutX="41.0" layoutY="55.0" prefHeight="325.0" prefWidth="225.0">
          <content>
