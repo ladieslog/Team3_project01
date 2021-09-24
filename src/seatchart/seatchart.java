@@ -1,6 +1,11 @@
 package seatchart;
 
 import java.net.URL;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -66,7 +71,7 @@ public class seatchart extends Thread implements Initializable{
 	}
 	
 	public void start() {
-		db.readDB_User("sjh");	// 현재 로그인 중인 계정 연결해야함
+		//db.readDB_User("");	// 현재 로그인 중인 계정 연결해야함
 		System.out.println("좌석 배치도 보기");
 		try {
 			Stage primaryStage = new Stage();
@@ -173,13 +178,27 @@ public class seatchart extends Thread implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		checkseatbtn.setOnAction(event->handleBtnStart(event));
+		/*DateFormat dateFormat = new SimpleDateFormat("yy/MM/dd HH:mm");
+		Date date = null;
+		try {
+			date = dateFormat.parse("21/08/06 13:00");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Timestamp str = new Timestamp(date.getTime());
+		*/
+		
+		reservedSeat(3, "21/08/06 13:57:44");
+		if(Controller.flag==true) CoupleSeatView();
+		else  RandomSeatView();
 	}
 	
 	public void ClickCoupleSeat(ActionEvent e) {
 		String couplechoice = ((Button)e.getTarget()).getText();
 		System.out.println("선택 좌석 : " + couplechoice);
-		db.insertDB("test22", 3, "21/08/06" , couplechoice, 0, 40000);
+		db.insertDB("test22", 3, "21/08/06 13:00" , couplechoice, 0, 40000);
 		Stage window = (Stage)RandomSeat.getScene().getWindow(); 
 		window.close();
 		payment.start();
@@ -192,7 +211,8 @@ public class seatchart extends Thread implements Initializable{
 			System.out.println(seat);
 			if(!contain(seat)) break;
 		}
-		db.insertDB("test22", 3, "21/08/06" , seat, 0, 20000);
+		
+		db.insertDB("test22", 3, "21/08/06 13:00:00" , seat, 0, 20000);
 		Stage window = (Stage)RandomSeat.getScene().getWindow(); 
 		window.close();
 		payment.start();
@@ -218,26 +238,5 @@ public class seatchart extends Thread implements Initializable{
 		}
 		return isC;
 	}
-		
-	@FXML private Button checkseatbtn;
- 	public void handleBtnStart(ActionEvent e) {	//좌석 갱신
- 		Thread thread = new Thread() {
- 			@Override
- 			public void run() {
- 				Platform.runLater(()->{
- 					checkseatbtn.setText("갱신완료");
- 					reservedSeat(3, "21/08/06");
- 					if(Controller.flag==true) CoupleSeatView();
- 					else  RandomSeatView();
- 				});
- 				try { Thread.sleep(1000); }
- 				catch (InterruptedException e) {
- 					System.out.println("인터럽트 발생");
- 				}	
- 			};
- 		};
- 		thread.setDaemon(true);
- 		thread.start();
- 	}
  }
  

@@ -3,6 +3,9 @@ package seatchart.payment;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -38,7 +41,6 @@ public class payment extends Thread implements Initializable{
 			Stage Stage = new Stage();
 			FXMLLoader loader = 
 					new FXMLLoader(getClass().getResource("/seatchart/payment/payment.fxml"));
-			 
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
 			payment ctl = loader.getController();						
@@ -74,38 +76,23 @@ public class payment extends Thread implements Initializable{
 	
 	public void Pay() {
 		System.out.println("결제창으로 이동");
-		db.reservation("test22", 3, "21/08/06");
+		db.reservation("test22", 3, "21/08/06 13:00");
 		
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}
 	
 	public void viewPay() {
-		MovieName.setText("노트북");
+		//DateFormat dateFormat = new SimpleDateFormat("yy/MM/dd");
+		//Date date = dto.getScreeningTime();        
+		//String dateToStr = dateFormat.format(date);
+		//MovieName.setText(String.valueOf(dto.getMovieNum()));
+		//ScreenTime.setText("test");
 	}
-	
-	
-	public void viewStart() {	//예매할 정보 갱신
- 		Thread thread = new Thread() {
- 			@Override
- 			public void run() {
- 				Platform.runLater(()->{
- 					viewPay();
- 					System.out.println("viewPay완료");
- 				});
- 				try { Thread.sleep(1000); }
- 				catch (InterruptedException e) {
- 				
- 				}	
- 			};
- 		};
- 		thread.setDaemon(true);
- 		thread.start();
- 	}
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+		viewPay();
 	}
 }

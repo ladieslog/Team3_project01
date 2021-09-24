@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 
 public class DBClass {
 	public Connection conn;
@@ -38,7 +39,7 @@ public class DBClass {
 	
 	public MovieDTO readDB_Seat(int movieNum, String screeningtime, String[] arr) {	// 이미 예매완료된 좌석 표시를 위함
 		System.out.println("readDB_Seat실행");
-		String sql = "select seat from destinymovie_seat where reservation=1 and movienum = "+movieNum+ "and screeningtime = '"+screeningtime+"'";
+		String sql = "select seat from destinymovie_seat where reservation = '1' and movienum = "+movieNum+" and screeningtime = '"+screeningtime+"'";
 		MovieDTO dto = null;	
 		int i=0;
 		
@@ -49,6 +50,7 @@ public class DBClass {
 			while(rs.next()) {
 				dto = new MovieDTO();
 				dto.setSeat(i, rs.getString("seat"));
+				System.out.println(dto.getSeat(i));
 				arr[i] = dto.getSeat(i);
 				i++;
 			}
@@ -72,7 +74,7 @@ public class DBClass {
 				dto.setId(rs.getString("id"));
 				dto.setSeat(0, rs.getString("seat"));
 				dto.setMovieNum(rs.getInt("movienum"));
-				dto.setScreeningTime(rs.getDate("screeningtime"));
+				dto.setScreeningTime(rs.getTimestamp("screeningtime"));
 				dto.setReservation(rs.getInt("reservation"));
 				dto.setPrice(rs.getInt("price"));
 			}
