@@ -7,16 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class UserListMain extends Application{
+public class UserListMain {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		launch(args);
-	}
 	
-	@Override
-	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
+	public void userList(Stage arg0) throws Exception {
 		Font.loadFont(getClass().getResourceAsStream("/Resources/HMFMMUEX.ttf"), 50);
 		
 		
@@ -31,28 +25,7 @@ public class UserListMain extends Application{
 		arg0.setScene(scene);
 		arg0.show();
 		
-		
-		
-		/*
-		AnchorPane ap = new AnchorPane();
-		
-		Scene scene = new Scene(ap, 300, 500);
-		ScrollPane sp = new ScrollPane();
-		sp.setMinSize(225, 325);
-		
-		AnchorPane spap = new AnchorPane();
-		
-		spap.setMinSize(225, 325);
-		
-		sp.getChildrenUnmodifiable().add(spap);
-		
-		ap.setLeftAnchor(sp, 30.0);
-		ap.setTopAnchor(sp, 20.0);
-		ap.getChildren().add(sp);
-		
-		arg0.setScene(scene);
-		arg0.show();
-		*/
+
 	}
 
 }

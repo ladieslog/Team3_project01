@@ -6,14 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MovieListMain extends Application{
+public class MovieListMain {
 
-	public static void main(String[] args) {
-		launch(args);
-	}
-	
-	@Override
-	public void start(Stage arg0) throws Exception {
+	public void movieList(Stage arg0) throws Exception {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/kjh_Manager/movieInfo/MovieList.fxml"));
 		Parent root = loader.load();
 		
@@ -23,7 +18,7 @@ public class MovieListMain extends Application{
 		mlc.setRoot(root);
 		arg0.setScene(scene);
 		arg0.show();
-		
 	}
+
 
 }
