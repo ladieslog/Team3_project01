@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../ojdbc6/black.png" />
+            <Image url="@../img/black.png" />
          </image>
       </ImageView>
       <MediaView fx:id="fxMediaView" fitHeight="180.0" fitWidth="450.0" layoutX="27.0" layoutY="71.0" />
@@ -21,12 +21,12 @@
          </font></Button>
       <ImageView fitHeight="55.0" fitWidth="267.0" layoutX="126.0" layoutY="22.0" onMouseClicked="#myPlay" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../ojdbc6/play.png" />
+            <Image url="@../img/play.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="160.0" layoutY="259.0" onMouseClicked="#reservation" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../ojdbc6/reservation.png" />
+            <Image url="@../img/reservation.png" />
          </image>
       </ImageView>
    </children>

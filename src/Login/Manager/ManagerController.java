@@ -35,6 +35,10 @@ public class ManagerController implements Initializable {
 		
 	}
 	
+	public void screenManagement() {
+		
+	}
+	
 	
 	
 	

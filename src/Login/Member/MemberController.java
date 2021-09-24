@@ -106,9 +106,14 @@ public class MemberController implements Initializable{
 			dto.setGender(getGender());
 			dto.setTel(getTel());
 			dto.setBirth(getBirth());		
-			loginDb.insert(dto);
-			back();  
+			int ss = loginDb.insert(dto);  
+			if(ss == 0) {
+				fxId.requestFocus();
+				msg="중복된 아이디 입니다.";
+			}else {
+			back(); 
 			msg="회원가입 성공";
+			}
 		}
 		al.alert(msg);
 		

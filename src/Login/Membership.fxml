@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../ojdbc6/member.png" />
+            <Image url="@../img/member.png" />
          </image>
       </ImageView>
       <Button layoutX="49.0" layoutY="113.0" mnemonicParsing="false" style="-fx-background-color: black;" text="아이디" textFill="WHITE">

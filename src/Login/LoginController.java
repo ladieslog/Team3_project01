@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 
 
 public class LoginController implements Initializable {
-
 	static Parent root;
 	UserMain user;
 	MemberMain member;
@@ -39,7 +38,6 @@ public class LoginController implements Initializable {
 	}
 	
 	public void mainScreen() {		// db연결 후 id 비교해서 if문 이용
-		
 		TextField id = (TextField)root.lookup("#inId");
 		PasswordField pwd = (PasswordField)root.lookup("#inPassword");
 		
@@ -64,13 +62,10 @@ public class LoginController implements Initializable {
 				pwd.requestFocus();
 			}
 		}
-
-		al.alert(msg);
-	
-		
+		al.alert(msg);	
 	}
 	
-/*	public void userLogin() {		// user 로그인 완료 후 뜨는 창
+  /*public void userLogin() {		// user 로그인 완료 후 뜨는 창
 		user.User();
 	}
 	
