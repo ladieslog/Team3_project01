@@ -1,11 +1,9 @@
 package seatchart.DB;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class MovieDTO {
 	private String id;
-	private String name;
 	private int movieNum;
 	private Timestamp screeningTime;
 	private String[] seat = new String[30];
@@ -47,17 +45,7 @@ public class MovieDTO {
 	public int getReservation() {
 		return reservation;
 	}
-	
 	public void setReservation(int resrtvation) {
 		this.reservation = resrtvation;
 	}
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-		
-	}
-
 }

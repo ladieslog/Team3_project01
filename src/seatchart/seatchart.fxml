@@ -189,7 +189,7 @@
          </font>
       </Text>
       <Rectangle fx:id="RandomSeat" arcHeight="5.0" arcWidth="5.0" fill="#fbfeff" height="486.0" layoutX="251.0" layoutY="102.0" onMouseClicked="#ClickRandomSeat" opacity="0.21" stroke="BLACK" strokeType="INSIDE" width="307.0" />
-      <Rectangle fx:id="Rect" arcHeight="5.0" arcWidth="5.0" height="486.0" layoutX="251.0" layoutY="102.0" opacity="0.86" stroke="BLACK" strokeType="INSIDE" width="307.0" />
+      <Rectangle fx:id="Rect" arcHeight="5.0" arcWidth="5.0" height="486.0" layoutX="251.0" layoutY="102.0" opacity="0.66" stroke="BLACK" strokeType="INSIDE" width="307.0" />
       <Button alignment="CENTER_RIGHT" layoutX="668.0" layoutY="63.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: black;" text="돌아가기" textFill="#f8f6f6" AnchorPane.bottomAnchor="598.0" AnchorPane.rightAnchor="25.0">
          <font>
             <Font name="MoeumT R" size="20.0" />
