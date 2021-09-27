@@ -29,7 +29,7 @@
             <Font name="MoeumT R" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="225.0" layoutY="452.0" mnemonicParsing="false" text="돌아가기">
+      <Button layoutX="225.0" layoutY="452.0" mnemonicParsing="false" onAction="#back" text="돌아가기">
          <font>
             <Font name="MoeumT R" size="13.0" />
          </font>
