@@ -198,5 +198,19 @@ public class DestinyMovieSeatDAO {
 		}
 		return result;
 	}
+	
+	public int deleteScreening(Timestamp time) {
+		con = connect();
+		int result = 0;
+		try {
+			ps = con.prepareStatement("DELETE FROM destinymovie_seat where TO_CHAR(?, 'yyyy/MM/dd HH24:MI') >= TO_CHAR(SCREENINGTIME, 'yyyy/MM/dd HH24:MI')");
+			ps.setTimestamp(1, time);
+			result = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 
 }
