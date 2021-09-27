@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import Login.Manager.ManagerMain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -125,5 +126,12 @@ public class MovieListController implements Initializable{
 	
 	public void setRoot(Parent root) {
 		this.root = root;
+	}
+	
+	public void back() {
+		ManagerMain manager = new ManagerMain();
+		manager.manager();
+		Stage primaryStage = (Stage)root.getScene().getWindow();
+		primaryStage.close();
 	}
 }

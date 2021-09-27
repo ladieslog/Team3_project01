@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #ffffff;" stylesheets="@../../kjh_css/tableViewStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kjh_Manager.userInfo.UserListController">
+   <children>
+      <ScrollPane fx:id="sp" layoutX="41.0" layoutY="55.0" prefHeight="325.0" prefWidth="225.0">
+         <content>
+            <TableView fx:id="tableView" onMouseClicked="#checked" prefHeight="323.0" prefWidth="502.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="125.0" text="아이디" />
+                <TableColumn fx:id="pwd" prefWidth="125.0" text="비밀번호" />
+                  <TableColumn fx:id="name" prefWidth="85.0" text="이름" />
+                  <TableColumn fx:id="gender" prefWidth="50.0" text="성별" />
+                  <TableColumn fx:id="tel" prefWidth="115.0" text="연락처" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Button layoutX="100.0" layoutY="406.0" mnemonicParsing="false" onAction="#userRemove" prefWidth="100.0" text="회원 삭제">
+         <font>
+            <Font name="MoeumT R" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="225.0" layoutY="452.0" mnemonicParsing="false" onAction="#back" text="돌아가기">
+         <font>
+            <Font name="MoeumT R" size="13.0" />
+         </font>
+      </Button>
+   </children>
+  	
+</AnchorPane>
