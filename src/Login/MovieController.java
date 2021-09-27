@@ -40,6 +40,7 @@ public class MovieController implements Initializable {
 	}
 	
 	public void reservation() {
+		mediaPlayer.stop();
 		go.back();
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
