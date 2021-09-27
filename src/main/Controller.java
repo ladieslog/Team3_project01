@@ -26,11 +26,11 @@ public class Controller implements Initializable{
  @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	 SeatChart = new SeatChart();
-	 	selectedScreeningTime = "2021/09/29 08:20";
+	 	selectedScreeningTime = "2021/09/30 16:50";
 	 	selectedUser = "abc";
- 		selectedMovieName = "어바웃 타임";
+ 		selectedMovieName = "비긴 어게인";
  		selectedScreeningNum = "2";
- 		selectedMovieNum = 2;
+ 		selectedMovieNum = 4;
 	}
  
  	public void selectCouple() {	// 커플 선택시	

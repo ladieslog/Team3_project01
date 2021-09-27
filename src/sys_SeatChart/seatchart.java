@@ -187,7 +187,6 @@ public class SeatChart implements Initializable{
 		String seat ;
 		while(true) {
 			seat = getRandomSeatNum();
-			System.out.println(seat);
 			if(!contain(seat)) break;
 		}
 

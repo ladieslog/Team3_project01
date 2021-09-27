@@ -1,6 +1,7 @@
 package sys_SeatChart.Payment;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -71,7 +72,7 @@ public class Payment implements Initializable{
 	
 	public void Pay() {
 		System.out.println("결제창으로 이동");
-		db.reservation(Controller.selectedUser, Controller.selectedMovieNum, SeatChart.screenTimestamp );
+		db.reservation(Controller.selectedUser, Controller.selectedMovieName, SeatChart.screenTimestamp );
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}
@@ -82,20 +83,27 @@ public class Payment implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		db.readDB_ForPay(Controller.selectedUser, Controller.selectedMovieName, SeatChart.screenTimestamp);
-		MovieName.setText(SeatChartDTO.getMovieName());
+		SeatChartDTO dto = db.readDB_ForPay(Controller.selectedUser, 
+				Controller.selectedMovieName, SeatChart.screenTimestamp);
 		
-		File file = null;
-		if(MovieName.getText().equals("노트북")) {file = new File("src/img/a5.jpg");}
-		else if(MovieName.getText().equals("라라랜드")) {file = new File("src/img/a2.jpg");}
-		else if(MovieName.getText().equals("어바웃 타임")) {file = new File("src/img/a3.jpg");}
-		else if(MovieName.getText().equals("비긴어게인")) {file = new File("src/img/a4.jpg");}
+		MovieName.setText(dto.getMovieName());
+		SeatChartDTO dtoPoster = db.readDB_Poster(MovieName.getText());
 		
+		File file = new File("src/img/a1.png");
+		try {
+			FileOutputStream fos = new FileOutputStream(file);
+			fos.write(dtoPoster.getImage());
+			fos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		Image image = new Image(file.toURI().toString());
 		MoviePoster.setImage(image);
 		
-		SeatNum.setText(SeatChartDTO.getSeat(0));
-		ScreenTime.setText(SeatChartDTO.getScreeningTime());
-		Price.setText(String.valueOf(SeatChartDTO.getPrice()));
+		SeatNum.setText(dto.getSeat(0));
+		ScreenTime.setText(dto.getScreeningTime());
+		Price.setText(String.valueOf(dto.getPrice()));
 	}
 }
+
+

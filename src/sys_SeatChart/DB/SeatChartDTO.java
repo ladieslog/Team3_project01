@@ -3,17 +3,18 @@ package sys_SeatChart.DB;
 public class SeatChartDTO {
 	private String id;
 	private int movieNum;
-	private static String movieName;
-	private static String screeningTime;
-	private static String[] seat = new String[30];
+	private String movieName;
+	private String screeningTime;
+	private String[] seat = new String[30];
 	private int reservation;
-	private static int price;
+	private int price;
+	private byte[] image ;
 	
-	public static int getPrice() {
+	public  int getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
-		SeatChartDTO.price = price;
+		this.price = price;
 	}
 	public String getId() {
 		return id;
@@ -27,17 +28,17 @@ public class SeatChartDTO {
 	public void setMovieNum(int movieNum) {
 		this.movieNum = movieNum;
 	}
-	public static String getScreeningTime() {
+	public  String getScreeningTime() {
 		return screeningTime;
 	}
 	public void setScreeningTime(String screeningTime) {
-		SeatChartDTO.screeningTime = screeningTime;
+		this.screeningTime = screeningTime;
 	}
-	public static String getSeat(int i) {
+	public String getSeat(int i) {
 		return seat[i];
 	}
 	public void setSeat(int i, String seat) {
-		SeatChartDTO.seat[i] = seat;
+		this.seat[i] = seat;
 	}
 	public int getReservation() {
 		return reservation;
@@ -45,10 +46,16 @@ public class SeatChartDTO {
 	public void setReservation(int resrtvation) {
 		this.reservation = resrtvation;
 	}
-	public static String getMovieName() {
+	public String getMovieName() {
 		return movieName;
 	}
 	public void setMovieName(String movieName) {
-		SeatChartDTO.movieName = movieName;
+		this.movieName = movieName;
+	}
+	public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 }
