@@ -15,7 +15,6 @@ public class MovieMain extends Application{
 	}
 	
 	public void start(Stage primaryStage) throws IOException {
-		TimeThread time = new TimeThread();
 		
 		Font.loadFont(getClass().getResourceAsStream("/Resources/HMFMMUEX.ttf"), 50);
 		FXMLLoader loader = 
@@ -31,6 +30,10 @@ public class MovieMain extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.show();	
 		
+
+
 	}
+	
+	
 	
 }
