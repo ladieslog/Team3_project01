@@ -7,8 +7,6 @@ import java.util.Date;
 import kjh_Manager.Screening.DestinyMovieSeatDAO;
 
 public class TimeThread {
-	public static boolean check = true;
-
 	public TimeThread() {
 		run();
 	}
