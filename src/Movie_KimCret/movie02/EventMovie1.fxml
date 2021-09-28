@@ -13,7 +13,7 @@
       <ImageView fx:id="img2" fitHeight="188.0" fitWidth="146.0" layoutX="236.0" layoutY="50.0" onMouseClicked="#img2" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="img3" fitHeight="188.0" fitWidth="146.0" layoutX="453.0" layoutY="50.0" onMouseClicked="#img3" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="img4" fitHeight="188.0" fitWidth="146.0" layoutX="643.0" layoutY="50.0" onMouseClicked="#img4" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="696.0" layoutY="7.0" mnemonicParsing="false" onAction="#stop" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: 000000;" text="돌아가기" textFill="WHITE">
+      <Button graphicTextGap="0.0" layoutX="761.0" layoutY="9.0" mnemonicParsing="false" onAction="#stop" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: 000000;" text="돌아가기" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="16.0" />
          </font></Button>
