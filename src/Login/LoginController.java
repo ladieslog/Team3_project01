@@ -14,6 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import saveInfo.UserId;
 
 
 public class LoginController implements Initializable {
@@ -24,6 +25,7 @@ public class LoginController implements Initializable {
 	Login.DB.LoginDB db;
 	Login.Alert.AlertClass al;
 	MovieBack movie;
+	UserId userId;
 	// 화면 옮길때마다 화면 꺼지고 돌아가기에서 다시 돌아와야함
 	// 폰트   MoeumT R
 	public void setRoot(Parent root) {
@@ -61,6 +63,8 @@ public class LoginController implements Initializable {
 		else if(dto.getId().equals(id.getText())){
 			if(dto.getPassword().equals(pwd.getText())) {
 				msg  = "로그인 성공";
+				UserId.setId(dto.getId());
+				System.out.println(UserId.getId());
 				user.User();
 				cancle();
 			}else {
@@ -106,6 +110,7 @@ public class LoginController implements Initializable {
 		db = new Login.DB.LoginDB();
 		al = new Login.Alert.AlertClass();
 		movie = new MovieBack();
+		userId = new UserId();
 	}
 	
 	

@@ -38,23 +38,23 @@ public class MovieAddController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 	}
-	
+	// 이미지 선택
 	public void imageAdd() {
-		FileChooser fileChooser = new FileChooser();
+		FileChooser fileChooser = new FileChooser(); // 파일선택창
 		
-		ExtensionFilter imgType = new ExtensionFilter("image file", "*.jpg", "*.gif", "*.png", "*.jpeg");
+		ExtensionFilter imgType = new ExtensionFilter("image file", "*.jpg", "*.gif", "*.png", "*.jpeg"); // 파일 확장자 필터링
 		fileChooser.getExtensionFilters().addAll(imgType);
 		
-		file = fileChooser.showOpenDialog(stage);
-		FileInputStream fis = null;
+		file = fileChooser.showOpenDialog(stage); // 파일 선택창에서 선택한 파일을 File 객체에 저장
+		FileInputStream fis = null; // 
 		try {
-			fis = new FileInputStream(file);
+			fis = new FileInputStream(file); // file를 담아서 fis를 생성
 			ImageView iv = (ImageView) root.lookup("#movieImage");
-			Image image = new Image(fis);
+			Image image = new Image(fis); 
 			
-			iv.setImage(image);
+			iv.setImage(image); // 선택한 이미지를 ImageView에 로드
 		} catch (Exception e) {
-			System.out.println("파일 선택 안함");
+			System.out.println("파일 선택 안함"); // 파일 선택 안하면 익셉션이 발생함
 		}
 	
 		try {
@@ -70,7 +70,7 @@ public class MovieAddController implements Initializable{
 		TextField movieAvg = (TextField) root.lookup("#movieAvg");
 		TextArea movieComtentArea = (TextArea) root.lookup("#movieComent");
 		
-		if(file == null) {
+		if(file == null) { 
 			alertShow("이미지를 추기해주세요");
 			return;
 		}
@@ -91,23 +91,23 @@ public class MovieAddController implements Initializable{
 			return;
 		}
 		
-		String movieComtent = movieComtentArea.getText();
+		String movieComtent = movieComtentArea.getText(); // 영화 코멘트 
 		
 		FileInputStream fis = null;
 		try {
-			 fis = new FileInputStream(file);
+			 fis = new FileInputStream(file); // 이미지를 fis에 저장, db에 이미지를 저장하려면 스트림을 이용해야함
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		int movieNum = dao.getMovieNum() + 1;
+		int movieNum = dao.getMovieNum() + 1; // 제일 높은 영화 번호를 가져와서 + 1;
 		DestinyMovieInfoDTO dto = new DestinyMovieInfoDTO();
 		
 		dto.setMovieNum(movieNum);
 		dto.setMovieName(movieName.getText());
 		dto.setMovieAvg(age);
 		
-		int result = dao.insertMovie(dto, fis, movieComtent);
+		int result = dao.insertMovie(dto, fis, movieComtent); // DB에 데이터 삽입
 		System.out.println(result);
 		tv.getItems().clear();
 		MovieListController.dbMovieList(tv, controllerMovieNum, controllerMovieName, controllerMovieAvg);
@@ -115,6 +115,7 @@ public class MovieAddController implements Initializable{
 		stage.close();
 	}
 	
+	// 돌아가기
 	public void back() {
 		stage = (Stage)root.getScene().getWindow();
 		stage.close();

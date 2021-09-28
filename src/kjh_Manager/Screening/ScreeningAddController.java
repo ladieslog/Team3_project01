@@ -87,6 +87,7 @@ public class ScreeningAddController implements Initializable{
 		}
 		try {
 			ld = year.getValue();
+			System.out.println(ld);
 			scrreningDate = java.sql.Date.valueOf(ld);
 		} catch (Exception e) {
 			alert("달력을 이용해주세요");
