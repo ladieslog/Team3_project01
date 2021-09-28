@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import timeThread.TimeThread;
 
 public class MovieMain extends Application{
 	public static void main(String[] args) {
@@ -22,9 +23,9 @@ public class MovieMain extends Application{
 		Parent root = loader.load();
 		
 		Scene scene = new Scene(root);
-		
 		MovieController ctl = loader.getController();
 		ctl.setRoot(root);
+		TimeThread tt = new TimeThread();
 		
 		primaryStage.setScene(scene);
 		primaryStage.show();	
