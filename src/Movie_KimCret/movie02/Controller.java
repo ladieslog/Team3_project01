@@ -142,6 +142,7 @@ public class Controller implements Initializable{
 		con2.setRoot(newRoot);
 		con2.setSeat(seat.get(0));
 		con2.setInfo(llc.get(0));
+		System.out.println(llc.get(0).getMovieName());
 		con2.setpath(path);
 		
 		con2.setImage(1);
@@ -168,7 +169,7 @@ public class Controller implements Initializable{
 		con2.setRoot(newRoot);
 		con2.setSeat(seat.get(1));
 		con2.setInfo(llc.get(1));
-		
+		System.out.println(llc.get(1).getMovieName());
 		con2.setpath(path);
 		con2.setImage(2);
 		
@@ -193,6 +194,7 @@ public class Controller implements Initializable{
 		con2.setRoot(newRoot);
 		con2.setSeat(seat.get(2));
 		con2.setInfo(llc.get(2));
+		
 		con2.setpath(path);
 		con2.setImage(3);
 		
@@ -218,6 +220,7 @@ public class Controller implements Initializable{
 		con2.setRoot(newRoot);
 		con2.setSeat(seat.get(3));
 		con2.setInfo(llc.get(3));
+		
 		con2.setpath(path);
 		con2.setImage(4);
 		
