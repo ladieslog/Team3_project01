@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import Movie_KimCret.movie01.Controller2;
 import Movie_KimCret.movie03.ControllerView1;
 import saveInfo.movieInfomat;
 import saveInfo.UserId;
@@ -90,10 +91,10 @@ public class SeatChart implements Initializable{
 		try {
 			Stage Stage = new Stage();
 			FXMLLoader loader = 
-					new FXMLLoader(getClass().getResource("/Movie_KimCret/movie03/EventMovie2.fxml"));
+					new FXMLLoader(getClass().getResource("/Movie_KimCret/movie01/EventMovie.fxml"));
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
-			ControllerView1 ctl = loader.getController();						
+			Controller2 ctl = loader.getController();						
 			ctl.setRoot(root);
 		    Stage.setScene(scene);
 		    Stage.show();
@@ -102,6 +103,7 @@ public class SeatChart implements Initializable{
 		}
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
+		
 	}
 
 	public void CoupleSeatView() {	// 커플좌석 활성화, 랜덤좌석 비활성화
@@ -187,7 +189,6 @@ public class SeatChart implements Initializable{
 			seat = getRandomSeatNum();
 			if(!contain(seat)) break;
 		}
-
 		db.updateDB(UserId.getId(), movieInfomat.getScreeningTime(),
 				seat, 20000, movieInfomat.getMovieName());
 		Stage window = (Stage)root.getScene().getWindow(); 
@@ -207,6 +208,7 @@ public class SeatChart implements Initializable{
 			if(arr[i]!=null) {
 				if(arr[i].equals(s)) {
 					isC=true;	
+					
 					break;
 				}
 			}

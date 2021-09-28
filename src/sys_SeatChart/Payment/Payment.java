@@ -21,6 +21,7 @@ import saveInfo.movieInfomat;
 import saveInfo.UserId;
 import sys_SeatChart.DB.SeatChartDBClass;
 import sys_SeatChart.DB.SeatChartDTO;
+import sjh.BillMain;
 
 public class Payment implements Initializable{
 	@FXML private Label MovieName;
@@ -29,7 +30,9 @@ public class Payment implements Initializable{
 	@FXML private Label Price;
 	@FXML private ImageView MoviePoster;
 	
-	SeatChartDBClass db = new SeatChartDBClass();
+	SeatChartDBClass db;
+	String arr[] = new String[3];
+	
 	Parent root;
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -53,9 +56,8 @@ public class Payment implements Initializable{
 	}
 	
 	public void exit() throws IOException {
-		db.del_Reservation(UserId.getId(), movieInfomat.getMovieNum(), movieInfomat.getScreeningTime()); // 결제 하지 않고 이전 화면으로 돌아갈 경우
-		Stage stage = (Stage)root.getScene().getWindow();
-		stage.close();
+		db.reset_Reservation(UserId.getId(), movieInfomat.getMovieName(), movieInfomat.getScreeningTime()); // 결제 하지 않고 이전 화면으로 돌아갈 경우
+		
 		try {
 			Stage Stage = new Stage();
 			FXMLLoader loader = 
@@ -69,31 +71,29 @@ public class Payment implements Initializable{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		Stage stage = (Stage)root.getScene().getWindow();
+		stage.close();
 	}
 	
 	public void Pay() {
-		System.out.println("결제창으로 이동");
+		BillMain BillMain = new BillMain();
+		BillMain.start();	
 		db.reservation(UserId.getId(), movieInfomat.getMovieName(), movieInfomat.getScreeningTime());
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}
 	
-	public void viewPay() {
-		
-	}
-	
-	public String seat;
-	public int price;
-	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		db = new SeatChartDBClass();
+		arr = db.readDB_ForPay(UserId.getId(),movieInfomat.getMovieName(),movieInfomat.getScreeningTime(),arr);
+				
+		MovieName.setText(arr[0]);
+		SeatNum.setText("좌석 번호 : "+ arr[1]);
 		SimpleDateFormat form= new SimpleDateFormat("MM/dd HH:mm");
 		String screeningTime=form.format(movieInfomat.getScreeningTime());
-		
-		SeatChartDTO dto = db.readDB_ForPay(UserId.getId(), 
-				movieInfomat.getMovieName(),movieInfomat.getScreeningTime(), seat, price);
-
-		MovieName.setText(dto.getMovieName());
+		ScreenTime.setText(screeningTime);
+		Price.setText("가격 : "+ arr[2]);
 		
 		SeatChartDTO dtoPoster = db.readDB_Poster(MovieName.getText());
 		File file = new File("src/img/a1.png");
@@ -106,10 +106,6 @@ public class Payment implements Initializable{
 		}
 		Image image = new Image(file.toURI().toString());
 		MoviePoster.setImage(image);
-		
-		SeatNum.setText("좌석 번호 : " +dto.getSeat(0));
-		ScreenTime.setText(screeningTime);
-		Price.setText("가격 : "+ String.valueOf(dto.getPrice()));
 	}
 }
 

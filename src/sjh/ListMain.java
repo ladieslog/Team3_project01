@@ -3,6 +3,7 @@ package sjh;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import Login.User.UserMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import saveInfo.UserId;
 
 public class ListMain implements Initializable{
 	DBClass db = new DBClass();
@@ -25,25 +27,6 @@ public class ListMain implements Initializable{
 		this.root= root;
 	}
 	
-    public void mainbtn () {
-	    Stage window = (Stage)mainbtn.getScene().getWindow(); 
-	    window.close();
-		try {
-			Stage Stage = new Stage();
-			FXMLLoader loader = 
-					new FXMLLoader(getClass().getResource("/sjh/test3.fxml"));
-			Parent root = loader.load();
-			Scene scene = new Scene(root);
-			Test3 ctl = loader.getController();						
-			ctl.setRoot(root);
-			Stage.setTitle("test3");
-			Stage.setScene(scene);
-			Stage.show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
-        
     public static String selectMovieName;
     public void ClickMovieName(ActionEvent e) {
 		selectMovieName = ((Button)e.getTarget()).getText();
@@ -65,17 +48,24 @@ public class ListMain implements Initializable{
 			Stage.setTitle("Refund");
 			Stage.setScene(scene);
 			Stage.show();
-				
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
     }
+    
+    public void mainbtn(){
+    	UserMain UserMain = new UserMain();
+		UserMain.User(); 
+		Stage window = (Stage)root.getScene().getWindow(); 
+		window.close();
+	}
+    
     public static boolean refundFlag = false;
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		String[] movieNameList = new String[4];		
-		db.readDB1(BillController.selectUserId, movieNameList);
+		db.readDB1(UserId.getId(), movieNameList);
 		
 		moviename1.setText(movieNameList[0]);	
 		moviename2.setText(movieNameList[1]);

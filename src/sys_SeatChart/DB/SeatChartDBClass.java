@@ -50,40 +50,37 @@ public class SeatChartDBClass {
 		return dto;	
 	}
 	
-	public SeatChartDTO readDB_ForPay(String id, String movieName, Timestamp screenTimestamp, String seat, int price) {	// 결제용 데이터 read
+	public String[] readDB_ForPay(String id, String movieName, Timestamp screenTimestamp, String[] arr) {	// 결제용 데이터 read
 		conn = SeatChartDBClass();
-		SeatChartDTO dto = null;	
+		System.out.println(id + movieName + screenTimestamp);
 		try {
 			ps = conn.prepareStatement("select * from destinymovie_seat where id = ? and reservation= '0' and moviename = ? and screeningtime = ?");
 			ps.setString(1, id);
 			ps.setString(2, movieName);
 			ps.setTimestamp(3, screenTimestamp);
 			rs = ps.executeQuery(); 
-			
+		
 			if(rs.next()) {
-				dto = new SeatChartDTO();
-				dto.setId(rs.getString("id"));
+				SeatChartDTO dto = new SeatChartDTO();
 				dto.setMovieName(rs.getString("moviename"));
-				dto.setScreeningTime(rs.getString("screeningtime"));
+				arr[0] = dto.getMovieName();
 				dto.setSeat(0, rs.getString("seat"));
+				arr[1] = dto.getSeat(0);
 				dto.setPrice(rs.getInt("price"));
-				
-				seat = dto.getSeat(0);
-				price = dto.getPrice();
-				
+				arr[2] = String.valueOf(dto.getPrice());
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			try {
-				rs.close();
+				rs.close();				
 				ps.close();
 				conn.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return dto;
+		return arr;
 	}
 	
 	public SeatChartDTO readDB_Poster(String movieName) {
@@ -158,13 +155,13 @@ public class SeatChartDBClass {
 		return result;
 	}
 	
-	public int del_Reservation(String id, int movieNum, Timestamp screeningtime) {	//	진행중이던 결제 정보 삭제
+	public int reset_Reservation(String id, String movieName, Timestamp screeningtime) {	//	진행중이던 결제 정보 삭제
 		conn = SeatChartDBClass();
 		int result = 0;
 		try {
-			ps = conn.prepareStatement("delete from destinymovie_seat where id = ? and movienum = ? and screeningtime = ?");
+			ps = conn.prepareStatement("update destinymovie_seat set id = '' ,reservation='0', price = '' where id = ? and moviename = ? and screeningtime = ?");
 			ps.setString(1, id);
-			ps.setInt(2, movieNum);
+			ps.setString(2, movieName);
 			ps.setTimestamp(3, screeningtime);
 			ps.executeUpdate();	
 		}catch(Exception e){

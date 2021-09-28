@@ -1,8 +1,11 @@
 package sjh;
 
 import java.net.URL;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
+import Login.User.UserMain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import saveInfo.UserId;
 
 public class RefundMain implements Initializable{
 	@FXML private Button refund;
@@ -21,18 +25,15 @@ public class RefundMain implements Initializable{
 	@FXML private Label screeningtime;
 	@FXML private Label seat;
 	DBClass db = new DBClass();
-	
+	String data[] = new String[3];
+
 	Parent root;
 	public void setRoot(Parent root) {
 		this.root= root;
 	}
 		
-	
 	public void refund() {
-		db.del_DB(BillController.selectUserId, ListMain.selectMovieName);
-
-		Stage window = (Stage)refund.getScene().getWindow(); 
-		window.close();
+		db.del_DB(UserId.getId(), ListMain.selectMovieName, DBClass.selectedTime);
 		try {
 			Stage Stage = new Stage();
 			FXMLLoader loader = 
@@ -48,43 +49,37 @@ public class RefundMain implements Initializable{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		alert();
+			Stage window = (Stage)refund.getScene().getWindow(); 
+			window.close();
+			refund_Alert();
 		}
 	
-	public void alert() {
+	public void refund_Alert() {
 		Alert alert =new Alert(AlertType.INFORMATION);
 		alert.setTitle("환불완료");
 		alert.setHeaderText("환불 완료되었습니다.");
-		alert.setContentText("결제내역 창으로 이동합니다.");
+		alert.setContentText("구매내역 창으로 이동합니다.");
 		alert.show();
 	}
 
 	public void gomain() {
-		Stage window = (Stage)gomain.getScene().getWindow(); 
+		UserMain UserMain = new UserMain();
+		UserMain.User(); 
+		Stage window = (Stage)root.getScene().getWindow(); 
 		window.close();
-		try {
-			Stage Stage = new Stage();
-			FXMLLoader loader = 
-					new FXMLLoader(getClass().getResource("/sjh/test3.fxml"));
-			Parent root = loader.load();
-			Scene scene = new Scene(root);
-			Test3 ctl = loader.getController();						
-			ctl.setRoot(root);
-			Stage.setTitle("test3");
-			Stage.setScene(scene);
-			Stage.show();
-
-		} catch (Exception e) {
-			e.printStackTrace(); 
-		}
 	}
-	
+	public static String screeningTime;
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		MovieDTO dto = db.readDB2("qwe", ListMain.selectMovieName );
-
-		moviename.setText(dto.getMovieName());
-		screeningtime.setText(dto.getScreeningTime());
-		seat.setText(dto.getSeat());
+	public void initialize(URL arg0, ResourceBundle arg1) {	//환불창 데이터
+		db = new DBClass();	
+		
+		data = db.readDB2(UserId.getId(), ListMain.selectMovieName, data);
+		SimpleDateFormat form= new SimpleDateFormat("MM/dd HH:mm");
+		screeningTime=form.format(DBClass.selectedTime);
+		
+		moviename.setText(data[0]);
+		seat.setText("좌석 번호 : "+ data[1]);
+		screeningtime.setText(screeningTime);
+	
 	}
 }
