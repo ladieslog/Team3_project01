@@ -31,7 +31,7 @@ public class UserListController implements Initializable{
 	
 	
 	
-	
+	// 테이블뷰의 객체들
 	@FXML
 	private  TableView<DestinyMovieUserDTO> tableView;
 	

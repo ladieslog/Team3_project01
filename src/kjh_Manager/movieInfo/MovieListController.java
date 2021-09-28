@@ -23,7 +23,7 @@ public class MovieListController implements Initializable{
 	
 	private static DestinyMovieInfoDAO dao = DestinyMovieInfoDAO.getInstance();
 	
-	
+	// 테이블뷰의 객체들
 	@FXML
 	private TableView<DestinyMovieInfoDTO> tableView;
 	
@@ -36,7 +36,7 @@ public class MovieListController implements Initializable{
 	@FXML
 	private TableColumn movieAvg;
 	
-	private static DestinyMovieInfoDTO checkDTO;
+	private static DestinyMovieInfoDTO checkDTO; // 테이블에서 선택한 데이터를 저장할 변수
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -80,10 +80,10 @@ public class MovieListController implements Initializable{
 	}
 	
 	public void checked(MouseEvent event) {
-		checkDTO = tableView.getSelectionModel().getSelectedItem();
+		checkDTO = tableView.getSelectionModel().getSelectedItem(); // 테이블에서 선택된 데이터
 	}
 	
-	public void movieRemove() {
+	public void movieRemove() { // 영화 삭제
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kjh_Manager/movieInfo/Warning.fxml"));
 			Parent newRoot = loader.load();
@@ -106,7 +106,7 @@ public class MovieListController implements Initializable{
 	}
 	
 	
-	public void movieAdd() {
+	public void movieAdd() { // 영화 추가
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kjh_Manager/movieInfo/MovieAdd.fxml"));
 			Parent newRoot = loader.load();
@@ -128,7 +128,7 @@ public class MovieListController implements Initializable{
 		this.root = root;
 	}
 	
-	public void back() {
+	public void back() { // 돌아가기
 		ManagerMain manager = new ManagerMain();
 		manager.manager();
 		Stage primaryStage = (Stage)root.getScene().getWindow();
