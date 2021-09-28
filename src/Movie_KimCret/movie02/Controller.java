@@ -143,16 +143,9 @@ public class Controller implements Initializable{
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
 		con2.setInfo(llc.get(0));
-<<<<<<< HEAD
-=======
-		con2.setSeat(seat.get(0));
->>>>>>> 489f5f6413a7f2db8a5b8040b6988f1874d86914
-		System.out.println(llc.get(0).getMovieName());
-		con2.setpath(path);
-		
+
+		con2.setpath(path);		
 		con2.setImage(1);
-		
-		
 		
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.setScene(scene);
@@ -173,13 +166,7 @@ public class Controller implements Initializable{
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
 		con2.setInfo(llc.get(1));
-<<<<<<< HEAD
-		System.out.println(llc.get(1).getMovieName());
-=======
-		con2.setSeat(seat.get(1));
-		System.out.println(llc.get(1).getMovieName());
-		
->>>>>>> 489f5f6413a7f2db8a5b8040b6988f1874d86914
+
 		con2.setpath(path);
 		con2.setImage(2);
 		
@@ -203,12 +190,9 @@ public class Controller implements Initializable{
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
 		con2.setInfo(llc.get(2));
-<<<<<<< HEAD
-		
-=======
+
 		con2.setSeat(seat.get(2));
-		System.out.println(llc.get(2).getMovieName());
->>>>>>> 489f5f6413a7f2db8a5b8040b6988f1874d86914
+
 		con2.setpath(path);
 		con2.setImage(3);
 		
@@ -233,12 +217,9 @@ public class Controller implements Initializable{
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
 		con2.setInfo(llc.get(3));
-<<<<<<< HEAD
-		
-=======
+
 		con2.setSeat(seat.get(3));
-		System.out.println(llc.get(3).getMovieName());
->>>>>>> 489f5f6413a7f2db8a5b8040b6988f1874d86914
+
 		con2.setpath(path);
 		con2.setImage(4);
 		
