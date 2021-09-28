@@ -43,6 +43,7 @@ public class ControllerView1 implements Initializable{
 		try {
 			FileOutputStream fos =new FileOutputStream(file);
 			fos.write(info.getImage());
+			System.out.println(info.getMovieName());
 			fos.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
