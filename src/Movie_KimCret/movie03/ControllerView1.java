@@ -21,7 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import saveInfo.movieInfomat;
-
+import sys_SeatChart.SeatChart;
 
 
 public class ControllerView1 implements Initializable{
@@ -69,6 +69,7 @@ public class ControllerView1 implements Initializable{
 	 }
 	 
  }
+ public static boolean flag;
  public void clc01() {
 	 //인연
 	 String st=seat.getSoloSeat(seat2);
@@ -80,7 +81,12 @@ public class ControllerView1 implements Initializable{
 		alert.show();
 	}else {
 		number();
-		//연결 솔로
+		flag = false;
+		SeatChart seatchart = new SeatChart();
+		seatchart.start();
+		Stage window = (Stage)root.getScene().getWindow(); 
+		window.close();
+		
 		
 		
 	}
@@ -99,7 +105,10 @@ public class ControllerView1 implements Initializable{
 		}else {
 			number();
 			//연결 커플
-			
+			SeatChart seatchart = new SeatChart();
+			seatchart.start();
+			Stage window = (Stage)root.getScene().getWindow(); 
+			window.close();
 			
 		}
  }
