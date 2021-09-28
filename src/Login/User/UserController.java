@@ -9,6 +9,7 @@ import Movie_KimCret.movie01.Mainclass;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
+import saveInfo.UserId;
 
 public class UserController implements Initializable {
 	Mainclass movie1 =new Mainclass();

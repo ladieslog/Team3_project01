@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class MovieController implements Initializable {
 	static Parent root;
-	MediaPlayer mediaPlayer;
+	static MediaPlayer mediaPlayer;
     MediaView mediaView;
     Button btnPlay;
     goBackMain go;
