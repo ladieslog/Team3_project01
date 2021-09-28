@@ -77,7 +77,7 @@ public class ControllerView1 implements Initializable{
 	int in =Integer.parseInt(st);
 	if(in==0) {
 		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setContentText("해당 영화는 매진되었습니다. 죄송합니다.");
+		alert.setContentText("죄송합니다. 해당 영화는 매진되었습니다.");
 		alert.show();
 	}else {
 		number();
@@ -100,11 +100,12 @@ public class ControllerView1 implements Initializable{
 		int in =Integer.parseInt(st2);
 		if(in==0) {
 			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setContentText("해당 영화는 매진되었습니다. 죄송합니다.");
+			alert.setContentText("죄송합니다. 해당 영화는 매진되었습니다.");
 			alert.show();
 		}else {
 			number();
 			//연결 커플
+			flag = true;
 			SeatChart seatchart = new SeatChart();
 			seatchart.start();
 			Stage window = (Stage)root.getScene().getWindow(); 

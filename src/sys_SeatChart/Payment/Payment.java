@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 import sys_SeatChart.SeatChart;
@@ -29,8 +30,6 @@ public class Payment implements Initializable{
 	@FXML private ImageView MoviePoster;
 	
 	SeatChartDBClass db = new SeatChartDBClass();
-	movieInfomat info = new movieInfomat();
-	UserId userid = new UserId();
 	Parent root;
 	public void setRoot(Parent root) {
 		this.root = root;
@@ -54,7 +53,7 @@ public class Payment implements Initializable{
 	}
 	
 	public void exit() throws IOException {
-		db.del_Reservation(userid.getId(), info.getMovieNum(), info.getScreeningTime()); // 결제 하지 않고 이전 화면으로 돌아갈 경우
+		db.del_Reservation(UserId.getId(), movieInfomat.getMovieNum(), movieInfomat.getScreeningTime()); // 결제 하지 않고 이전 화면으로 돌아갈 경우
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 		try {
@@ -74,7 +73,7 @@ public class Payment implements Initializable{
 	
 	public void Pay() {
 		System.out.println("결제창으로 이동");
-		db.reservation(userid.getId(), info.getMovieName(), info.getScreeningTime());
+		db.reservation(UserId.getId(), movieInfomat.getMovieName(), movieInfomat.getScreeningTime());
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}
@@ -83,14 +82,20 @@ public class Payment implements Initializable{
 		
 	}
 	
+	public String seat;
+	public int price;
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		SeatChartDTO dto = db.readDB_ForPay(userid.getId(), 
-				info.getMovieName(),info.getScreeningTime());
+		SimpleDateFormat form= new SimpleDateFormat("MM/dd HH:mm");
+		String screeningTime=form.format(movieInfomat.getScreeningTime());
 		
+		SeatChartDTO dto = db.readDB_ForPay(UserId.getId(), 
+				movieInfomat.getMovieName(),movieInfomat.getScreeningTime(), seat, price);
+
 		MovieName.setText(dto.getMovieName());
-		SeatChartDTO dtoPoster = db.readDB_Poster(MovieName.getText());
 		
+		SeatChartDTO dtoPoster = db.readDB_Poster(MovieName.getText());
 		File file = new File("src/img/a1.png");
 		try {
 			FileOutputStream fos = new FileOutputStream(file);
@@ -102,9 +107,9 @@ public class Payment implements Initializable{
 		Image image = new Image(file.toURI().toString());
 		MoviePoster.setImage(image);
 		
-		SeatNum.setText(dto.getSeat(0));
-		ScreenTime.setText(dto.getScreeningTime());
-		Price.setText(String.valueOf(dto.getPrice()));
+		SeatNum.setText("좌석 번호 : " +dto.getSeat(0));
+		ScreenTime.setText(screeningTime);
+		Price.setText("가격 : "+ String.valueOf(dto.getPrice()));
 	}
 }
 

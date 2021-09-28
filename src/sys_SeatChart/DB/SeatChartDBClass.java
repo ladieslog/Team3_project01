@@ -50,7 +50,7 @@ public class SeatChartDBClass {
 		return dto;	
 	}
 	
-	public SeatChartDTO readDB_ForPay(String id, String movieName, Timestamp screenTimestamp) {	// 결제용 데이터 read
+	public SeatChartDTO readDB_ForPay(String id, String movieName, Timestamp screenTimestamp, String seat, int price) {	// 결제용 데이터 read
 		conn = SeatChartDBClass();
 		SeatChartDTO dto = null;	
 		try {
@@ -60,15 +60,17 @@ public class SeatChartDBClass {
 			ps.setTimestamp(3, screenTimestamp);
 			rs = ps.executeQuery(); 
 			
-			while(rs.next()) {
+			if(rs.next()) {
 				dto = new SeatChartDTO();
 				dto.setId(rs.getString("id"));
-				dto.setSeat(0, rs.getString("seat"));
 				dto.setMovieName(rs.getString("moviename"));
-				dto.setMovieNum(rs.getInt("movienum"));
 				dto.setScreeningTime(rs.getString("screeningtime"));
-				dto.setReservation(rs.getInt("reservation"));
+				dto.setSeat(0, rs.getString("seat"));
 				dto.setPrice(rs.getInt("price"));
+				
+				seat = dto.getSeat(0);
+				price = dto.getPrice();
+				
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -109,21 +111,17 @@ public class SeatChartDBClass {
 		return dto;	
 	}
 	
-	public int insertDB(String id, int MovieNum, Timestamp screenTimestamp, String SeatNum, int Reservation, int Price, String movieName, String ScreeningNum ) {
+	public int updateDB(String id, Timestamp screenTimestamp, String SeatNum, int Price, String movieName ) {
 		conn = SeatChartDBClass();
-		String sql = "insert into destinymovie_seat(id, movienum, screeningtime, seat, reservation, price, moviename, screeningnum) "
-				+ "values(?,?,?,?,?,?,?,?)";
+		String sql = "update destinymovie_seat set id = ?, price = ? where seat = ? and screeningtime = ? and moviename = ?";
 		int result = 0;
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, id);
-			ps.setInt(2, MovieNum);
-			ps.setTimestamp(3, screenTimestamp);
-			ps.setString(4, SeatNum);
-			ps.setInt(5, Reservation);
-			ps.setInt(6, Price);
-			ps.setString(7, movieName);
-			ps.setString(8, ScreeningNum);
+			ps.setInt(2, Price);
+			ps.setString(3, SeatNum);
+			ps.setTimestamp(4, screenTimestamp);
+			ps.setString(5, movieName);
 			result = ps.executeUpdate();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -142,7 +140,7 @@ public class SeatChartDBClass {
 		conn = SeatChartDBClass();
 		int result = 0;
 		try {
-			ps = conn.prepareStatement("update destinymovie_seat set reservation='1' where id = ? and movienum = ? and screeningtime = ?");
+			ps = conn.prepareStatement("update destinymovie_seat set reservation='1' where id = ? and moviename = ? and screeningtime = ?");
 			ps.setString(1, id);
 			ps.setString(2, movieName);
 			ps.setTimestamp(3, screeningtime);

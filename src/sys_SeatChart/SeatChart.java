@@ -2,10 +2,6 @@ package sys_SeatChart;
 
 import java.net.URL;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -61,8 +57,6 @@ public class SeatChart implements Initializable{
 	@FXML private Rectangle RandomSeat;
 	
 	SeatChartDBClass db = new SeatChartDBClass();
-	movieInfomat info = new movieInfomat();
-	UserId userid = new UserId();
 	Payment payment = new Payment();
 	public static Timestamp screenTimestamp;
 	String arr[] = new String[30];
@@ -96,11 +90,11 @@ public class SeatChart implements Initializable{
 		try {
 			Stage Stage = new Stage();
 			FXMLLoader loader = 
-					new FXMLLoader(getClass().getResource("/main/Main.fxml"));
+					new FXMLLoader(getClass().getResource("/Movie_KimCret/movie03/EventMovie2.fxml"));
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
-			//Controller ctl = loader.getController();						
-			//ctl.setRoot(root);
+			ControllerView1 ctl = loader.getController();						
+			ctl.setRoot(root);
 		    Stage.setScene(scene);
 		    Stage.show();
 		} catch (Exception e) {
@@ -129,7 +123,7 @@ public class SeatChart implements Initializable{
 	}
 	
 	public void reservedSeat(String movieName, Timestamp time) {	// 이미 예매되어있는 좌석 표시
-		db.readDB_Seat(info.getMovieName(), info.getScreeningTime(), arr);
+		db.readDB_Seat(movieInfomat.getMovieName(), movieInfomat.getScreeningTime(), arr);
 		for(int j=0 ; j<arr.length ; j++) {	
 			if(arr[j] != null) {
 				if(arr[j].equals("A1")) { A1.setText("X"); A1.setStyle("-fx-background-color:gray");} 
@@ -172,16 +166,16 @@ public class SeatChart implements Initializable{
 	
 	public void alert() {
 		Alert alert =new Alert(AlertType.INFORMATION);
-		alert.setTitle("알려드립니다.");
-		alert.setHeaderText("연인 좌석과 인연좌석의 자리 배정,");
+		alert.setTitle("자리 배정 안내");
+		alert.setHeaderText("연인 좌석과 인연좌석의 자리 배정");
 		alert.setContentText("연인 좌석은 지정 배정\n인연 좌석은 랜덤 배정됩니다");
 		alert.show();
 	}
 		
 	public void ClickCoupleSeat(ActionEvent e) {
 		String couplechoice = ((Button)e.getTarget()).getText();
-		db.insertDB(userid.getId(), info.getMovieNum(), info.getScreeningTime() , 
-				couplechoice, 0, 40000, info.getMovieName(), "0");
+		db.updateDB(UserId.getId(), movieInfomat.getScreeningTime() , 
+				couplechoice, 40000, movieInfomat.getMovieName());
 		Stage window = (Stage)root.getScene().getWindow(); 
 		window.close();
 		payment.start();
@@ -194,8 +188,8 @@ public class SeatChart implements Initializable{
 			if(!contain(seat)) break;
 		}
 
-		db.insertDB(userid.getId(), info.getMovieNum(), info.getScreeningTime(),
-				seat, 0, 20000, info.getMovieName(), "0");
+		db.updateDB(UserId.getId(), movieInfomat.getScreeningTime(),
+				seat, 20000, movieInfomat.getMovieName());
 		Stage window = (Stage)root.getScene().getWindow(); 
 		window.close();
 		payment.start();
@@ -222,17 +216,7 @@ public class SeatChart implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		/*DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-		Date date = null;
-		try {
-			date = dateFormat.parse(Controller.selectedScreeningTime);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		screenTimestamp = new Timestamp(date.getTime());
-		*/
-		
-		reservedSeat(info.getMovieName(), info.getScreeningTime());
+		reservedSeat(movieInfomat.getMovieName(), movieInfomat.getScreeningTime());
 		if(ControllerView1.flag==true) CoupleSeatView();
 		else  RandomSeatView();
 	}
