@@ -20,7 +20,7 @@ public class TimeThread {
 		Timestamp ts = new Timestamp(date.getTime());
 		int result = dao.deleteScreening(ts);
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
