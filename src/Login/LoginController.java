@@ -48,9 +48,15 @@ public class LoginController implements Initializable {
 			msg = "해당 아이디는 존재하지 않습니다";
 			id.requestFocus();
 		}else if(id.getText().equals("team03")) {
-			msg = "관리자 로그인 성공";
-			manager.manager();
-			cancle();
+			if(pwd.getText().equals("3333")) {
+				msg = "관리자 로그인 성공";
+				manager.manager();
+				cancle();
+			}
+			else {
+				msg = "비밀번호가 틀렸습니다";
+				pwd.requestFocus();
+			}
 		}
 		else if(dto.getId().equals(id.getText())){
 			if(dto.getPassword().equals(pwd.getText())) {
@@ -60,10 +66,17 @@ public class LoginController implements Initializable {
 			}else {
 				msg = "비밀번호가 틀렸습니다";
 				pwd.requestFocus();
-			}
+			}	
 		}
-		al.alert(msg);	
+		al.alert(msg);
+	}	
+/*	
+	public void id() {
+		UserId id = new UserId();
+		System.out.println(db.loginchk(id.getText()));
 	}
+	*/
+	
 	
   /*public void userLogin() {		// user 로그인 완료 후 뜨는 창
 		user.User();

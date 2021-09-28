@@ -40,7 +40,6 @@ public class LoginDB {
 		} finally {
 			try {
 				ps.close();
-				conn.close();
 			} catch (Exception e2) {
 				// TODO: handle exception
 			}
@@ -67,7 +66,6 @@ public class LoginDB {
 		}finally {
 			try {
 				ps.close();
-				conn.close();
 			} catch (Exception e2) {
 				// TODO: handle exception
 			}
