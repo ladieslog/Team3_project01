@@ -44,7 +44,7 @@ public class Controller implements Initializable{
 	private TableColumn soloSeat;	
 	private static Stage sacStage;	
 	private static Timestamp time;
-	private static ArrayList<movieInfomation_DTO> llc= new ArrayList<movieInfomation_DTO>();
+	private ArrayList<movieInfomation_DTO> llc= new ArrayList<movieInfomation_DTO>();
 	private static String path;
 	ImageView Image;
 	private static ArrayList<movieSeat_DTO> seat;
@@ -61,6 +61,7 @@ public class Controller implements Initializable{
 		//time =new Timestamp(date.getTime());		
 		
 		//ArrayList<movieSeat_DTO> seat = dao.seat(time);
+		//System.out.println(llc);
 		
 			int i=0;
 			for(movieSeat_DTO dto:seat) {
@@ -83,9 +84,10 @@ public class Controller implements Initializable{
 				String couple2=dao.getCoupleSeat(dto);
 				String solo2 = dao.getSoloSeat(dto);
 				movieInfomation_DTO info=dao2.movieList(dto.getMovieNum());
-				System.out.println(info.getImage());
+				//System.out.println(info.getMovieName());
 				File file =new File("a1.png");
 				llc.add(info);
+				// System.out.println(llc.get(i-1).getMovieName());
 				
 				
 				
@@ -140,13 +142,10 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
-		con2.setSeat(seat.get(0));
 		con2.setInfo(llc.get(0));
-		con2.setpath(path);
-		
+
+		con2.setpath(path);		
 		con2.setImage(1);
-		
-		
 		
 		Stage stage = (Stage)root.getScene().getWindow();
 		stage.setScene(scene);
@@ -166,9 +165,8 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
-		con2.setSeat(seat.get(1));
 		con2.setInfo(llc.get(1));
-		
+
 		con2.setpath(path);
 		con2.setImage(2);
 		
@@ -191,8 +189,10 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
-		con2.setSeat(seat.get(2));
 		con2.setInfo(llc.get(2));
+
+		con2.setSeat(seat.get(2));
+
 		con2.setpath(path);
 		con2.setImage(3);
 		
@@ -216,8 +216,10 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
-		con2.setSeat(seat.get(3));
 		con2.setInfo(llc.get(3));
+
+		con2.setSeat(seat.get(3));
+
 		con2.setpath(path);
 		con2.setImage(4);
 		
