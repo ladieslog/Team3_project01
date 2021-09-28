@@ -19,7 +19,6 @@ public class TimeThread extends Thread{
 			Date date = cal.getTime();
 			Timestamp ts = new Timestamp(date.getTime());
 			int result = dao.deleteScreening(ts);
-			System.out.println(result);
 			try {
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {

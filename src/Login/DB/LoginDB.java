@@ -10,6 +10,7 @@ import java.sql.Connection;
 
 public class LoginDB {
 	public Connection conn;
+	PreparedStatement ps;
 	public LoginDB() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -26,7 +27,7 @@ public class LoginDB {
 	"insert into destinymovie_user(name,id,password,gender,tel,birth) values(?,?,?,?,?,?)";
 		int result = 0;
 		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+			ps = conn.prepareStatement(sql);
 			ps.setString(1, dto.getName());
 			ps.setString(2, dto.getId());
 			ps.setString(3, dto.getPassword());
@@ -36,6 +37,13 @@ public class LoginDB {
 			result = ps.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception
+		} finally {
+			try {
+				ps.close();
+				conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
 		}
 		return result;
 	}
@@ -44,7 +52,7 @@ public class LoginDB {
 		String sql = "select * from destinymovie_user where id=?";
 		LoginDTO dto = null;
 		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+			ps = conn.prepareStatement(sql);
 			ps.setString(1, inputid);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
@@ -56,6 +64,13 @@ public class LoginDB {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+		}finally {
+			try {
+				ps.close();
+				conn.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
 		}
 		return dto;
 	}
