@@ -73,7 +73,7 @@ public class Controller implements Initializable{
 				 Label couple =(Label)root.lookup("#couple"+i);
 				 Label score =(Label)root.lookup("#score"+i);
 				 SimpleDateFormat sim1= new SimpleDateFormat("MM/dd");
-				 SimpleDateFormat sim2= new SimpleDateFormat("HHmm");
+				 SimpleDateFormat sim2= new SimpleDateFormat("HH:mm");
 				 String st1=sim1.format(new Date(dto.getScreeningttime().getTime()));
 				 String st2=sim2.format(new Date(dto.getScreeningttime().getTime()));
 				 
