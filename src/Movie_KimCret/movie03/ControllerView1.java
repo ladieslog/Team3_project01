@@ -8,22 +8,34 @@ import java.util.ResourceBundle;
 
 import Movie_KimCret.movie01.Controller2;
 import Movie_KimCret.movieDb.movieInfomation_DTO;
+import Movie_KimCret.movieDb.movieSeatDAO;
 import Movie_KimCret.movieDb.movieSeat_DTO;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import saveInfo.movieInfomat;
 
 
 
 public class ControllerView1 implements Initializable{
 	static Parent root;
 	static movieInfomation_DTO info;
+	private static movieSeatDAO seat= movieSeatDAO.getInstance();
 	private static String path;
+	private static movieSeat_DTO seat2;
+	
+	
+ 
+	public void setSeat(movieSeat_DTO seat2) {
+		this.seat2= seat2;
+	}
 	ImageView Image;
 	public void setpath(String path) {
 		this.path =path;
@@ -58,14 +70,48 @@ public class ControllerView1 implements Initializable{
 	 
  }
  public void clc01() {
-	 System.out.println(000000);
+	 //인연
+	 String st=seat.getSoloSeat(seat2);
+	st=st.substring(0,st.indexOf("/"));
+	int in =Integer.parseInt(st);
+	if(in==0) {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setContentText("해당 영화는 매진되었습니다. 죄송합니다.");
+		alert.show();
+	}else {
+		number();
+		//연결 솔로
+		
+		
+	}
+	
+	//System.out.println(st);
  }
  public void clc02() {
-	 
+	//연인
+	 String st2=seat.getCoupleSeat(seat2);
+	 st2=st2.substring(0,st2.indexOf("/"));
+		int in =Integer.parseInt(st2);
+		if(in==0) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setContentText("해당 영화는 매진되었습니다. 죄송합니다.");
+			alert.show();
+		}else {
+			number();
+			//연결 커플
+			
+			
+		}
  }
- public void img1() {
-	 
+ 
+ public void number() {
+	 movieInfomat moInfo =new movieInfomat();
+	 moInfo.setMovieNum(info.getMovieNum());
+	 moInfo.setMovieName(info.getMovieName());
+	 moInfo.setScreeningTime(seat2.getScreeningttime());
+	
  }
+
  public void stop() {
 		
 		try {

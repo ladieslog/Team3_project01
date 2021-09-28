@@ -14,21 +14,24 @@
          </image>
       </ImageView>
       <ImageView fx:id="images" fitHeight="253.0" fitWidth="166.0" layoutX="20.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="507.0" layoutY="24.0" onMouseClicked="#clc01" prefHeight="53.0" prefWidth="59.0" text="인연" textFill="#fffdfd">
+      <Label layoutX="507.0" layoutY="24.0" onMouseClicked="#clc01" prefHeight="53.0" prefWidth="59.0" text="인연" textFill="#ffffff">
          <font>
            <Font name="MoeumT R" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="507.0" layoutY="88.0" onMouseClicked="#clc02" prefHeight="53.0" prefWidth="59.0" text="연인" textFill="#fffdfd">
+      <Label layoutX="507.0" layoutY="88.0" onMouseClicked="#clc02" prefHeight="53.0" prefWidth="59.0" text="연인" textFill="#ffffff">
          <font>
            <Font name="MoeumT R" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="498.0" layoutY="233.0" onMouseClicked="#clc03" prefHeight="53.0" prefWidth="78.0" text="돌아가기" textFill="#fffdfd">
+      <Label layoutX="498.0" layoutY="233.0" onMouseClicked="#clc03" prefHeight="53.0" prefWidth="78.0" text="돌아가기" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="cont" layoutX="204.0" layoutY="22.0" prefHeight="256.0" prefWidth="260.0" text="우리나라에서 가장 유명한 로맨스 영화가“클래식”\n이라면 세계적으로 유명한 로맨스 영화는바로 이 영화 “노트북”이라\n 말할 수 있다.​영화 &lt;노트북&gt;은 '니콜라스 스파크스'의 소설을원작으로 1940년\n대 신분 차이와 전쟁으로 헤어질 수밖에 없었던 젊은 연인의 실화를 다루고 있다.​나는 심적으로 육체적으로 힘이 들때 마다 항상 로맨스 영화를 보고 힐링을 하는데이번에 본 “노트북”은 정말 최고의 힐링이였다.왜 이제서야 이 영화를 봤을까? 하는 생각도 들고마음이 우중충하고 심란할 때 보는 로맨스 영화는그야말로 쵝오다 ㅎㅎ 마음이 몽글몽글해지는 기분~" textFill="#f5f3f3" wrapText="true" />
+      <Label fx:id="cont" layoutX="204.0" layoutY="22.0" prefHeight="256.0" prefWidth="260.0" text="우리나라에서 가장 유명한 로맨스 영화가“클래식”\n이라면 세계적으로 유명한 로맨스 영화는바로 이 영화 “노트북”이라\n 말할 수 있다.​영화 &lt;노트북&gt;은 '니콜라스 스파크스'의 소설을원작으로 1940년\n대 신분 차이와 전쟁으로 헤어질 수밖에 없었던 젊은 연인의 실화를 다루고 있다.​나는 심적으로 육체적으로 힘이 들때 마다 항상 로맨스 영화를 보고 힐링을 하는데이번에 본 “노트북”은 정말 최고의 힐링이였다.왜 이제서야 이 영화를 봤을까? 하는 생각도 들고마음이 우중충하고 심란할 때 보는 로맨스 영화는그야말로 쵝오다 ㅎㅎ 마음이 몽글몽글해지는 기분~" textFill="#ffffff" wrapText="true">
+         <font>
+            <Font name="MoeumT R" size="13.0" />
+         </font></Label>
    </children>
 </AnchorPane>

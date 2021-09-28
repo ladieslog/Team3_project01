@@ -5,12 +5,13 @@ import java.util.ResourceBundle;
 
 import Login.LoginMain;
 import Login.goBackMain;
+import Movie_KimCret.movie01.Mainclass;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 public class UserController implements Initializable {
-
+	Mainclass movie1 =new Mainclass();
 	static Parent root;
 	goBackMain back;
 	public void setRoot(Parent root) {
@@ -28,7 +29,7 @@ public class UserController implements Initializable {
 	}
 	
 	public void movieReservation() {
-		
+		movie1.playon();
 		cancle();
 	}
 	

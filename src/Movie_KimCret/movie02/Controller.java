@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+import Movie_KimCret.movie01.Controller2;
 import Movie_KimCret.movie03.ControllerView1;
 import Movie_KimCret.movieDb.MovieInfoDAO;
 import Movie_KimCret.movieDb.movieInfomation_DTO;
@@ -20,9 +21,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -44,21 +47,21 @@ public class Controller implements Initializable{
 	private static ArrayList<movieInfomation_DTO> llc= new ArrayList<movieInfomation_DTO>();
 	private static String path;
 	ImageView Image;
+	private static ArrayList<movieSeat_DTO> seat;
 	
 	
 	public void SetDate(Date date) {
 		this.date=date;
 		DBList();
 	}
-	
+	public void SetDate2(ArrayList<movieSeat_DTO> seat) {
+		this.seat=seat;
+	}
 	public void DBList() {
-		time =new Timestamp(date.getTime());		
+		//time =new Timestamp(date.getTime());		
 		
-		ArrayList<movieSeat_DTO> seat = dao.seat(time);
-		if(seat.size()==0) {
-			
-			
-		}else {
+		//ArrayList<movieSeat_DTO> seat = dao.seat(time);
+		
 			int i=0;
 			for(movieSeat_DTO dto:seat) {
 				i++;
@@ -70,7 +73,7 @@ public class Controller implements Initializable{
 				 Label couple =(Label)root.lookup("#couple"+i);
 				 Label score =(Label)root.lookup("#score"+i);
 				 SimpleDateFormat sim1= new SimpleDateFormat("MM/dd");
-				 SimpleDateFormat sim2= new SimpleDateFormat("HH/mm");
+				 SimpleDateFormat sim2= new SimpleDateFormat("HHmm");
 				 String st1=sim1.format(new Date(dto.getScreeningttime().getTime()));
 				 String st2=sim2.format(new Date(dto.getScreeningttime().getTime()));
 				 
@@ -119,7 +122,7 @@ public class Controller implements Initializable{
 		//time1 time2 time3 time4 week1 week2 week3 week4
 		
 		
-	}
+	//}
 		
 	public void setRoot(Parent root) {
 	 this.root=root;
@@ -137,6 +140,7 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
+		con2.setSeat(seat.get(0));
 		con2.setInfo(llc.get(0));
 		con2.setpath(path);
 		
@@ -162,6 +166,7 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
+		con2.setSeat(seat.get(1));
 		con2.setInfo(llc.get(1));
 		
 		con2.setpath(path);
@@ -186,6 +191,7 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
+		con2.setSeat(seat.get(2));
 		con2.setInfo(llc.get(2));
 		con2.setpath(path);
 		con2.setImage(3);
@@ -210,6 +216,7 @@ public class Controller implements Initializable{
 		scene = new Scene(newRoot);
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
+		con2.setSeat(seat.get(3));
 		con2.setInfo(llc.get(3));
 		con2.setpath(path);
 		con2.setImage(4);
@@ -220,12 +227,33 @@ public class Controller implements Initializable{
 		stage.setScene(scene);
 		stage.show();
 }
- public void stop() {
+ public void stop() { 
+	 stop2();
+	 System.out.println(root);
 	 Stage stage = (Stage)root.getScene().getWindow();
-		stage.close();
+	 stage.close();
+	 
  }
  
- 
+ public void stop2() {
+		
+		try {
+			 Stage stage = new Stage();
+			 FXMLLoader loader = 
+						new FXMLLoader(getClass().getResource("../movie01/EventMovie.fxml"));
+
+				Parent root = loader.load();
+				Scene scene = new Scene(root);
+
+				Controller2 ctl = loader.getController();
+				ctl.setRoot(root);
+				stage.setScene(scene);
+				stage.show();
+				
+		} catch (Exception e) {
+			// TODO: handle exception
+		}		
+}
 @Override
 public void initialize(URL arg0, ResourceBundle arg1) {
 	// TODO Auto-generated method stub
