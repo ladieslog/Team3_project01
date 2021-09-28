@@ -19,11 +19,15 @@ public class TimeThread {
 		Date date = cal.getTime();
 		Timestamp ts = new Timestamp(date.getTime());
 		int result = dao.deleteScreening(ts);
+<<<<<<< HEAD
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+=======
+		
+>>>>>>> 489f5f6413a7f2db8a5b8040b6988f1874d86914
 	}
 }
