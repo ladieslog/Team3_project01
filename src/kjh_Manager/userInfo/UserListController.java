@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import Login.Manager.ManagerMain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import timeThread.TimeThread;
 
 public class UserListController implements Initializable{
 	
@@ -30,7 +32,7 @@ public class UserListController implements Initializable{
 	
 	
 	
-	
+	// 테이블뷰의 객체들
 	@FXML
 	private  TableView<DestinyMovieUserDTO> tableView;
 	
@@ -94,6 +96,7 @@ public class UserListController implements Initializable{
 	}
 	
 	public void userRemove() {
+		TimeThread tt = new TimeThread();
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kjh_Manager/userInfo/Warning.fxml"));
 			Parent newRoot = loader.load();
@@ -115,15 +118,20 @@ public class UserListController implements Initializable{
 	}
 	
 	
-	public void back() {
-		System.out.println("돌아가기");
-	}
 	
 	public void setRoot(Parent root) {
 		this.root = root;
 		
 	}
 	
+	public void back() {
+		TimeThread tt = new TimeThread();
+		ManagerMain manager = new ManagerMain();
+		manager.manager();
+		Stage primaryStage = (Stage)root.getScene().getWindow();
+		primaryStage.close();
+		
+	}
 	
 	
 }

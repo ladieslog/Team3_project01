@@ -1,5 +1,6 @@
 package kjh_Manager.movieInfo;
 
+import Login.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,7 +19,9 @@ public class MovieListMain {
 		mlc.setRoot(root);
 		arg0.setScene(scene);
 		arg0.show();
+		//마스터 푸쉬용 코드
 	}
+
 
 
 }
