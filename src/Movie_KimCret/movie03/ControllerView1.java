@@ -73,6 +73,7 @@ public class ControllerView1 implements Initializable{
  public static boolean flag;
  public void clc01() {
 	 //인연
+	 System.out.println(seat2);
 	 String st=seat.getSoloSeat(seat2);
 	st=st.substring(0,st.indexOf("/"));
 	int in =Integer.parseInt(st);
@@ -82,14 +83,13 @@ public class ControllerView1 implements Initializable{
 		alert.show();
 	}else {
 		number();
+		//연결 솔로
 		flag = false;
 		SeatChart seatchart = new SeatChart();
 		seatchart.start();
 		Stage window = (Stage)root.getScene().getWindow(); 
 		window.close();
-		
-		
-		
+
 	}
 	
 	//System.out.println(st);
@@ -111,7 +111,6 @@ public class ControllerView1 implements Initializable{
 			seatchart.start();
 			Stage window = (Stage)root.getScene().getWindow(); 
 			window.close();
-			
 		}
  }
  

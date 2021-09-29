@@ -50,7 +50,7 @@ public class movieSeatDAO {
 		ArrayList<movieSeat_DTO> list = new ArrayList<>();
 		con = connect();
 		try {
-			ps = con.prepareStatement("SELECT DISTINCT movieNum, SCREENINGTIME, movieName FROM destinymovie_seat ORDER BY SCREENINGTIME ASC");
+			ps = con.prepareStatement("SELECT DISTINCT MOVIENUM, SCREENINGTIME, M FROM destinymovie_seat ORDER BY SCREENINGTIME ASC");
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				movieSeat_DTO dto = new movieSeat_DTO();
@@ -152,7 +152,7 @@ public class movieSeatDAO {
 		con = connect();
 		ArrayList<movieSeat_DTO> arr=new ArrayList<movieSeat_DTO>();
 		try {
-			ps= con.prepareStatement("SELECT DISTINCT MovieNum, SCREENINGTIME FROM destinymovie_seat WHERE TO_CHAR(?, 'yyyy/MM/dd') = TO_CHAR(SCREENINGTIME, 'yyyy/MM/dd')");
+			ps= con.prepareStatement("SELECT DISTINCT MovieNum, SCREENINGTIME FROM destinymovie_seat WHERE TO_CHAR(?, 'yyyy/MM/dd') = TO_CHAR(SCREENINGTIME, 'yyyy/MM/dd') ORDER BY SCREENINGTIME ASC");
 			ps.setTimestamp(1, time);
 			rs= ps.executeQuery();
 				while(rs.next()) {
