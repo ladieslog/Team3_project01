@@ -21,7 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import saveInfo.movieInfomat;
-
+import sys_SeatChart.SeatChart;
 
 
 public class ControllerView1 implements Initializable{
@@ -70,6 +70,7 @@ public class ControllerView1 implements Initializable{
 	 }
 	 
  }
+ public static boolean flag;
  public void clc01() {
 	 //인연
 	 System.out.println(seat2);
@@ -78,11 +79,16 @@ public class ControllerView1 implements Initializable{
 	int in =Integer.parseInt(st);
 	if(in==0) {
 		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setContentText("해당 영화는 매진되었습니다. 죄송합니다.");
+		alert.setContentText("죄송합니다. 해당 영화는 매진되었습니다.");
 		alert.show();
 	}else {
 		number();
-		//연결 솔로
+		flag = false;
+		SeatChart seatchart = new SeatChart();
+		seatchart.start();
+		Stage window = (Stage)root.getScene().getWindow(); 
+		window.close();
+		
 		
 		
 	}
@@ -96,12 +102,16 @@ public class ControllerView1 implements Initializable{
 		int in =Integer.parseInt(st2);
 		if(in==0) {
 			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setContentText("해당 영화는 매진되었습니다. 죄송합니다.");
+			alert.setContentText("죄송합니다. 해당 영화는 매진되었습니다.");
 			alert.show();
 		}else {
 			number();
 			//연결 커플
-			
+			flag = true;
+			SeatChart seatchart = new SeatChart();
+			seatchart.start();
+			Stage window = (Stage)root.getScene().getWindow(); 
+			window.close();
 			
 		}
  }
