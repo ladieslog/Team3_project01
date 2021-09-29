@@ -8,39 +8,39 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Movie_KimCret.movie02.Controller">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="808.0" layoutX="42.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img1" fitHeight="188.0" fitWidth="146.0" layoutX="45.0" layoutY="50.0" onMouseClicked="#img1" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img2" fitHeight="188.0" fitWidth="146.0" layoutX="236.0" layoutY="50.0" onMouseClicked="#img2" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img3" fitHeight="188.0" fitWidth="146.0" layoutX="453.0" layoutY="50.0" onMouseClicked="#img3" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img4" fitHeight="188.0" fitWidth="146.0" layoutX="643.0" layoutY="50.0" onMouseClicked="#img4" pickOnBounds="true" preserveRatio="true" />
-      <Button graphicTextGap="0.0" layoutX="761.0" layoutY="9.0" mnemonicParsing="false" onAction="#stop" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: 000000;" text="돌아가기" textFill="WHITE">
+      <ImageView fitHeight="400.0" fitWidth="808.0" layoutX="97.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img1" fitHeight="188.0" fitWidth="146.0" layoutX="55.0" layoutY="50.0" onMouseClicked="#img1" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img2" fitHeight="188.0" fitWidth="146.0" layoutX="295.0" layoutY="50.0" onMouseClicked="#img2" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img3" fitHeight="188.0" fitWidth="146.0" layoutX="526.0" layoutY="50.0" onMouseClicked="#img3" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img4" fitHeight="188.0" fitWidth="146.0" layoutX="756.0" layoutY="50.0" onMouseClicked="#img4" pickOnBounds="true" preserveRatio="true" />
+      <Button graphicTextGap="0.0" layoutX="872.0" layoutY="6.0" mnemonicParsing="false" onAction="#stop" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: 000000;" text="돌아가기" textFill="WHITE">
          <font>
             <Font name="MoeumT R" size="16.0" />
          </font></Button>
-      <Label layoutX="44.0" layoutY="456.0" text="평점 : " textFill="#ffffff">
+      <Label layoutX="55.0" layoutY="460.0" text="평점 : " textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font></Label>
-      <Label layoutX="35.0" layoutY="382.0" text="인연자석" textFill="#ffffff">
+      <Label alignment="CENTER" layoutX="54.0" layoutY="383.0" text="인연자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font></Label>
-      <Label fx:id="title1" layoutX="85.0" layoutY="344.0" text="--" textFill="#ffffff">
+      <Label fx:id="title1" alignment="CENTER" layoutX="37.0" layoutY="347.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title2" layoutX="283.0" layoutY="347.0" text="--" textFill="#ffffff">
+      <Label fx:id="title2" alignment="CENTER" layoutX="291.0" layoutY="351.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title3" layoutX="492.0" layoutY="334.0" text="--" textFill="#ffffff">
+      <Label fx:id="title3" alignment="CENTER" layoutX="527.0" layoutY="347.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title4" layoutX="692.0" layoutY="340.0" text="--" textFill="#ffffff">
+      <Label fx:id="title4" alignment="CENTER" layoutX="754.0" layoutY="351.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
@@ -50,192 +50,192 @@
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="35.0" layoutY="416.0" text="연인자석" textFill="#ffffff">
+      <Label layoutX="54.0" layoutY="418.0" text="연인자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="254.0" layoutY="390.0" text="인연자석" textFill="#ffffff">
+      <Label alignment="CENTER" layoutX="293.0" layoutY="385.0" text="인연자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="254.0" layoutY="424.0" text="연인자석" textFill="#ffffff">
+      <Label layoutX="293.0" layoutY="419.0" text="연인자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="465.0" layoutY="384.0" text="인연자석" textFill="#ffffff">
+      <Label alignment="CENTER" layoutX="526.0" layoutY="384.0" text="인연자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="465.0" layoutY="418.0" text="연인자석" textFill="#ffffff">
+      <Label layoutX="526.0" layoutY="418.0" text="연인자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="668.0" layoutY="386.0" text="인연자석" textFill="#ffffff">
+      <Label alignment="CENTER" layoutX="760.0" layoutY="391.0" text="인연자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="668.0" layoutY="420.0" text="연인자석" textFill="#ffffff">
+      <Label layoutX="760.0" layoutY="425.0" text="연인자석" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="solo1" layoutX="131.0" layoutY="380.0" text="/" textFill="#ffffff">
+      <Label fx:id="solo1" layoutX="138.0" layoutY="383.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="couple1" layoutX="131.0" layoutY="414.0" text="/" textFill="#ffffff">
+      <Label fx:id="couple1" layoutX="138.0" layoutY="417.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="solo2" layoutX="357.0" layoutY="391.0" text="/" textFill="#ffffff">
+      <Label fx:id="solo2" layoutX="379.0" layoutY="383.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="couple2" layoutX="357.0" layoutY="425.0" text="/" textFill="#ffffff">
+      <Label fx:id="couple2" layoutX="379.0" layoutY="417.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="solo3" layoutX="579.0" layoutY="384.0" text="/" textFill="#ffffff">
+      <Label fx:id="solo3" layoutX="608.0" layoutY="382.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="couple3" layoutX="579.0" layoutY="418.0" text="/" textFill="#ffffff">
+      <Label fx:id="couple3" layoutX="608.0" layoutY="416.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="solo4" layoutX="777.0" layoutY="387.0" text="/" textFill="#ffffff">
+      <Label fx:id="solo4" layoutX="853.0" layoutY="393.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="couple4" layoutX="777.0" layoutY="421.0" text="/" textFill="#ffffff">
+      <Label fx:id="couple4" layoutX="853.0" layoutY="427.0" prefHeight="20.0" prefWidth="100.0" text="/" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="score1" layoutX="126.0" layoutY="458.0" text="---" textFill="#ffffff">
+      <Label fx:id="score1" layoutX="120.0" layoutY="459.0" prefHeight="20.0" prefWidth="120.0" text="---" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="254.0" layoutY="460.0" text="평점 : " textFill="#ffffff">
+      <Label layoutX="293.0" layoutY="459.0" text="평점 : " textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="score2" layoutX="336.0" layoutY="462.0" text="---" textFill="#ffffff">
+      <Label fx:id="score2" layoutX="361.0" layoutY="459.0" prefWidth="120.0" text="---" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="465.0" layoutY="456.0" text="평점 : " textFill="#ffffff">
+      <Label layoutX="526.0" layoutY="458.0" text="평점 : " textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="score3" layoutX="547.0" layoutY="458.0" text="---" textFill="#ffffff">
+      <Label fx:id="score3" layoutX="587.0" layoutY="458.0" prefHeight="20.0" prefWidth="120.0" text="---" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="668.0" layoutY="456.0" text="평점 : " textFill="#ffffff">
+      <Label layoutX="760.0" layoutY="465.0" text="평점 : " textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="score4" layoutX="750.0" layoutY="458.0" text="---" textFill="#ffffff">
+      <Label fx:id="score4" layoutX="818.0" layoutY="465.0" prefHeight="20.0" prefWidth="120.0" text="---" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title11" layoutX="54.0" layoutY="277.0" text="요일" textFill="#ffffff">
+      <Label fx:id="title11" alignment="CENTER" layoutX="54.0" layoutY="277.0" text="요일" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title111" layoutX="54.0" layoutY="312.0" text="시간" textFill="#ffffff">
+      <Label fx:id="title111" alignment="CENTER" layoutX="54.0" layoutY="312.0" text="시간" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title112" layoutX="270.0" layoutY="276.0" text="요일" textFill="#ffffff">
+      <Label fx:id="title112" alignment="CENTER" layoutX="299.0" layoutY="280.0" text="요일" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title1111" layoutX="270.0" layoutY="311.0" text="시간" textFill="#ffffff">
+      <Label fx:id="title1111" alignment="CENTER" layoutX="299.0" layoutY="314.0" text="시간" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title113" layoutX="471.0" layoutY="268.0" text="요일" textFill="#ffffff">
+      <Label fx:id="title113" alignment="CENTER" layoutX="530.0" layoutY="279.0" text="요일" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title1112" layoutX="471.0" layoutY="303.0" text="시간" textFill="#ffffff">
+      <Label fx:id="title1112" alignment="CENTER" layoutX="530.0" layoutY="314.0" text="시간" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title114" layoutX="678.0" layoutY="273.0" text="요일" textFill="#ffffff">
+      <Label fx:id="title114" alignment="CENTER" layoutX="771.0" layoutY="283.0" text="요일" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="title1113" layoutX="678.0" layoutY="308.0" text="시간" textFill="#ffffff">
+      <Label fx:id="title1113" alignment="CENTER" layoutX="771.0" layoutY="320.0" text="시간" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="week3" layoutX="528.0" layoutY="268.0" text="--" textFill="#ffffff">
+      <Label fx:id="week3" layoutX="587.0" layoutY="279.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="time3" layoutX="528.0" layoutY="301.0" text="--" textFill="#ffffff">
+      <Label fx:id="time3" layoutX="587.0" layoutY="314.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="week4" layoutX="736.0" layoutY="273.0" text="--" textFill="#ffffff">
+      <Label fx:id="week4" layoutX="829.0" layoutY="283.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="time4" layoutX="736.0" layoutY="308.0" text="--" textFill="#ffffff">
+      <Label fx:id="time4" layoutX="829.0" layoutY="318.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="week2" layoutX="330.0" layoutY="276.0" text="--" textFill="#ffffff">
+      <Label fx:id="week2" layoutX="359.0" layoutY="280.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="time2" layoutX="330.0" layoutY="311.0" text="--" textFill="#ffffff">
+      <Label fx:id="time2" layoutX="359.0" layoutY="315.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="week1" layoutX="119.0" layoutY="277.0" text="--" textFill="#ffffff">
+      <Label fx:id="week1" layoutX="120.0" layoutY="277.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="time1" layoutX="119.0" layoutY="312.0" text="--" textFill="#ffffff">
+      <Label fx:id="time1" layoutX="119.0" layoutY="312.0" prefHeight="20.0" prefWidth="120.0" text="--" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="19.0" />
          </font>
