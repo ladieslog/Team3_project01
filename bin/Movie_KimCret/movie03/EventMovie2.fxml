@@ -14,17 +14,17 @@
          </image>
       </ImageView>
       <ImageView fx:id="images" fitHeight="253.0" fitWidth="166.0" layoutX="20.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="536.0" layoutY="145.0" onMouseClicked="#clc01" prefHeight="53.0" prefWidth="59.0" text="인연" textFill="#ffffff">
+      <Label layoutX="536.0" layoutY="145.0" onMouseClicked="#clc01" prefHeight="53.0" prefWidth="59.0" text="인연" textFill="#82c7ed">
          <font>
            <Font name="MoeumT R" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="536.0" layoutY="189.0" onMouseClicked="#clc02" prefHeight="53.0" prefWidth="59.0" text="연인" textFill="#ffffff">
+      <Label layoutX="536.0" layoutY="189.0" onMouseClicked="#clc02" prefHeight="53.0" prefWidth="59.0" text="연인" textFill="PINK">
          <font>
            <Font name="MoeumT R" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="517.0" layoutY="233.0" onMouseClicked="#clc03" prefHeight="53.0" prefWidth="78.0" text="돌아가기" textFill="#ffffff">
+      <Label layoutX="517.0" layoutY="267.0" onMouseClicked="#clc03" prefHeight="28.0" prefWidth="78.0" text="돌아가기" textFill="#ffffff">
          <font>
             <Font name="MoeumT R" size="17.0" />
          </font>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="500.0" prefWidth="300.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sjh.ListMain">
+   <children>
+      <Button fx:id="mainbtn" layoutX="124.0" layoutY="439.0" mnemonicParsing="false" onAction="#mainbtn" style="-fx-background-color: black;" text="메인" textFill="WHITE">
+         <font>
+            <Font name="MoeumT R" size="18.0" />
+         </font></Button>
+      <Label layoutX="102.0" layoutY="50.0" prefHeight="40.0" prefWidth="96.0" text="구매내역" textFill="WHITE" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="102.0">
+         <font>
+            <Font name="MoeumT R" size="29.0" />
+         </font></Label>
+      <Button fx:id="moviename1" alignment="CENTER" layoutX="40.0" layoutY="140.0" mnemonicParsing="false" onAction="#ClickMovieName" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: black;" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="140.0">
+         <font>
+            <Font name="MoeumT R" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="moviename2" alignment="CENTER" layoutX="43.0" layoutY="198.0" mnemonicParsing="false" onAction="#ClickMovieName" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: black;" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="200.0">
+         <font>
+            <Font name="MoeumT R" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="moviename3" alignment="CENTER" layoutX="40.0" layoutY="262.0" mnemonicParsing="false" onAction="#ClickMovieName" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: black;" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font name="MoeumT R" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="moviename4" alignment="CENTER" layoutX="41.0" layoutY="322.0" mnemonicParsing="false" onAction="#ClickMovieName" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: black;" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="320.0">
+         <font>
+            <Font name="MoeumT R" size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
