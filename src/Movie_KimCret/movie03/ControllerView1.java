@@ -82,7 +82,7 @@ public class ControllerView1 implements Initializable{
 	}else {
 		number();
 		//연결 솔로
-		
+		System.out.println("1");
 		
 	}
 	
@@ -100,7 +100,7 @@ public class ControllerView1 implements Initializable{
 		}else {
 			number();
 			//연결 커플
-			
+			System.out.println("2");
 			
 		}
  }

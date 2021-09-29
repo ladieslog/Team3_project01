@@ -50,7 +50,7 @@ public class movieSeatDAO {
 		ArrayList<movieSeat_DTO> list = new ArrayList<>();
 		con = connect();
 		try {
-			ps = con.prepareStatement("SELECT DISTINCT movieNum, SCREENINGTIME, movieName FROM destinymovie_seat ORDER BY SCREENINGTIME ASC");
+			ps = con.prepareStatement("SELECT DISTINCT MOVIENUM, SCREENINGTIME, M FROM destinymovie_seat ORDER BY SCREENINGTIME ASC");
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				movieSeat_DTO dto = new movieSeat_DTO();
