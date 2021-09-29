@@ -25,6 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import kjh_Manager.movieInfo.DestinyMovieInfoDAO;
 import kjh_Manager.movieInfo.DestinyMovieInfoDTO;
+import timeThread.TimeThread;
 
 public class ScreeningAddController implements Initializable{
 	private static Stage stage;
@@ -79,6 +80,7 @@ public class ScreeningAddController implements Initializable{
 	}
 	
 	public void scrreningAdd() {
+		TimeThread tt = new TimeThread();
 		LocalDate ld = null;
 		Date scrreningDate = null;
 		if(check == null) {
@@ -173,6 +175,7 @@ public class ScreeningAddController implements Initializable{
 	
 	
 	public void back() {
+		TimeThread tt = new TimeThread();
 		stage.close();
 	}
 	

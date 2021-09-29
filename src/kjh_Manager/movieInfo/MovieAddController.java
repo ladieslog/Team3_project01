@@ -19,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import timeThread.TimeThread;
 import javafx.stage.Stage;
 
 public class MovieAddController implements Initializable{
@@ -66,6 +67,7 @@ public class MovieAddController implements Initializable{
 	}
 	
 	public void movieAdd() {
+		TimeThread tt = new TimeThread();
 		TextField movieName = (TextField) root.lookup("#movieName");
 		TextField movieAvg = (TextField) root.lookup("#movieAvg");
 		TextArea movieComtentArea = (TextArea) root.lookup("#movieComent");
@@ -117,6 +119,7 @@ public class MovieAddController implements Initializable{
 	
 	// 돌아가기
 	public void back() {
+		TimeThread tt = new TimeThread();
 		stage = (Stage)root.getScene().getWindow();
 		stage.close();
 	}

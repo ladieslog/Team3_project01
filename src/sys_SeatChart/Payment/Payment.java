@@ -21,6 +21,7 @@ import saveInfo.movieInfomat;
 import saveInfo.UserId;
 import sys_SeatChart.DB.SeatChartDBClass;
 import sys_SeatChart.DB.SeatChartDTO;
+import timeThread.TimeThread;
 import sjh.BillMain;
 
 public class Payment implements Initializable{
@@ -39,6 +40,7 @@ public class Payment implements Initializable{
 	}
 	
 	public void start() {
+		TimeThread tt = new TimeThread();
 		try {
 			Stage Stage = new Stage();
 			FXMLLoader loader = 
@@ -56,6 +58,7 @@ public class Payment implements Initializable{
 	}
 	
 	public void exit() throws IOException {
+		TimeThread tt = new TimeThread();
 		db.reset_Reservation(UserId.getId(), movieInfomat.getMovieName(), movieInfomat.getScreeningTime()); // 결제 하지 않고 이전 화면으로 돌아갈 경우
 		
 		try {
@@ -76,6 +79,7 @@ public class Payment implements Initializable{
 	}
 	
 	public void Pay() {
+		TimeThread tt = new TimeThread();
 		BillMain BillMain = new BillMain();
 		BillMain.start();	
 		db.reservation(UserId.getId(), movieInfomat.getMovieName(), movieInfomat.getScreeningTime());

@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import saveInfo.UserId;
 import sjh.ListMain;
+import timeThread.TimeThread;
 
 public class LoginController implements Initializable {
 	static Parent root;
@@ -35,6 +36,7 @@ public class LoginController implements Initializable {
  	}
 
 	public void membership() {		// 회원가입 창
+		TimeThread tt = new TimeThread();
 		member.mamber();
 		cancle();
 	}
@@ -51,6 +53,7 @@ public class LoginController implements Initializable {
 			id.requestFocus();
 		}else if(id.getText().equals("team03")) {
 			if(pwd.getText().equals("3333")) {
+				TimeThread tt = new TimeThread();
 				msg = "관리자 로그인 성공";
 				manager.manager();
 				cancle();
@@ -62,6 +65,7 @@ public class LoginController implements Initializable {
 		}
 		else if(dto.getId().equals(id.getText())){
 			if(dto.getPassword().equals(pwd.getText())) {
+				TimeThread tt = new TimeThread();
 				msg  = "로그인 성공";
 				UserId.setId(dto.getId());
 				System.out.println(UserId.getId());
@@ -93,6 +97,7 @@ public class LoginController implements Initializable {
 	}*/
 	
 	public void backMovie() {
+		TimeThread tt = new TimeThread();
 		movie.movieBack();
 		cancle();
 	}

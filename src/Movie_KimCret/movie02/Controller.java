@@ -29,6 +29,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import timeThread.TimeThread;
 
 
 
@@ -130,6 +131,7 @@ public class Controller implements Initializable{
 	 this.root=root;
 	}
 	public void img1() {
+		TimeThread tt = new TimeThread();
 		FXMLLoader loader = 
 				new FXMLLoader(getClass().getResource("../movie03/EventMovie2.fxml"));
 		Parent newRoot = null;
@@ -154,6 +156,7 @@ public class Controller implements Initializable{
 		
  }
  public void img2() {
+	 TimeThread tt = new TimeThread();
 		FXMLLoader loader = 
 				new FXMLLoader(getClass().getResource("../movie03/EventMovie2.fxml"));
 		Parent newRoot = null;
@@ -180,6 +183,7 @@ public class Controller implements Initializable{
 		stage.show();
 }
  public void img3() {
+	 TimeThread tt = new TimeThread();
 		FXMLLoader loader = 
 				new FXMLLoader(getClass().getResource("../movie03/EventMovie2.fxml"));
 		Parent newRoot = null;
@@ -206,7 +210,7 @@ public class Controller implements Initializable{
 		stage.show();
 }
  public void img4() {
-	 
+	 TimeThread tt = new TimeThread();
 		FXMLLoader loader = 
 				new FXMLLoader(getClass().getResource("../movie03/EventMovie2.fxml"));
 		Parent newRoot = null;
@@ -232,7 +236,8 @@ public class Controller implements Initializable{
 		stage.setScene(scene);
 		stage.show();
 }
- public void stop() { 
+ public void stop() {
+	 TimeThread tt = new TimeThread();
 	 stop2();
 	 System.out.println(root);
 	 Stage stage = (Stage)root.getScene().getWindow();

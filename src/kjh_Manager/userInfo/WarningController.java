@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import timeThread.TimeThread;
 
 public class WarningController implements Initializable{
 	
@@ -43,6 +44,7 @@ public class WarningController implements Initializable{
 	}
 	
 	public void remove() {
+		TimeThread tt = new TimeThread();
 		int result = dao.removeUser(checkId);
 		System.out.println(result);
 		tv.getItems().clear();
@@ -52,6 +54,7 @@ public class WarningController implements Initializable{
 	}
 	
 	public void Cancel() {
+		TimeThread tt = new TimeThread();
 		stage.close();
 	}
 	

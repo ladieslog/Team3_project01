@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import kjh_Manager.Screening.ScreeningListMain;
 import kjh_Manager.movieInfo.MovieListMain;
 import kjh_Manager.userInfo.UserListMain;
+import timeThread.TimeThread;
 
 public class ManagerController implements Initializable {
 
@@ -35,19 +36,23 @@ public class ManagerController implements Initializable {
 	}
 	
 	public void goBack() {
+		TimeThread tt = new TimeThread();
 		back.back();
 		cancle();
 	}
 	
 	public void memberList() throws Exception {
+		TimeThread tt = new TimeThread();
 		user.userList(stage);
 	}
 	
 	public void movieManagement() throws Exception {
+		TimeThread tt = new TimeThread();
 		movieList.movieList(stage);
 	}
 	
 	public void screenManagement() throws Exception {
+		TimeThread tt = new TimeThread();
 		screen.screeningList(stage);
 	}
 	

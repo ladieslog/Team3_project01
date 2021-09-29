@@ -15,6 +15,7 @@ import Login.DB.LoginDTO;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
+import timeThread.TimeThread;
 
 public class MemberController implements Initializable{
 		
@@ -30,6 +31,7 @@ public class MemberController implements Initializable{
 	}
 	
 	public void back() {	// 돌아가기 버튼
+		TimeThread tt = new TimeThread();
 		back.back();
 		Stage primaryStage = (Stage)root.getScene().getWindow();
 		primaryStage.close();
@@ -111,6 +113,7 @@ public class MemberController implements Initializable{
 				fxId.requestFocus();
 				msg="중복된 아이디 입니다.";
 			}else {
+				TimeThread tt = new TimeThread();
 			back(); 
 			msg="회원가입 성공";
 			}

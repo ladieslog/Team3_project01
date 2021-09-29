@@ -16,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import kjh_Manager.movieInfo.DestinyMovieInfoDTO;
+import timeThread.TimeThread;
 
 public class ScreeningListController implements Initializable{
 	
@@ -76,6 +77,7 @@ public class ScreeningListController implements Initializable{
 	}
 	
 	public void screeningAdd() {
+		TimeThread tt = new TimeThread();
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/kjh_Manager/Screening/ScreeningAdd.fxml"));
 			Parent newRoot = loader.load();
@@ -102,6 +104,7 @@ public class ScreeningListController implements Initializable{
 	}
 	
 	public void back() {
+		TimeThread tt = new TimeThread();
 		ManagerMain manager = new ManagerMain();
 		manager.manager();
 		Stage primaryStage = (Stage)root.getScene().getWindow();

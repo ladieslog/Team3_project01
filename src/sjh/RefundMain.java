@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import saveInfo.UserId;
+import timeThread.TimeThread;
 
 public class RefundMain implements Initializable{
 	@FXML private Button refund;
@@ -33,6 +34,7 @@ public class RefundMain implements Initializable{
 	}
 		
 	public void refund() {
+		TimeThread tt = new TimeThread();
 		db.del_DB(UserId.getId(), ListMain.selectMovieName, DBClass.selectedTime);
 		try {
 			Stage Stage = new Stage();
@@ -63,6 +65,7 @@ public class RefundMain implements Initializable{
 	}
 
 	public void gomain() {
+		TimeThread tt = new TimeThread();
 		UserMain UserMain = new UserMain();
 		UserMain.User(); 
 		Stage window = (Stage)root.getScene().getWindow(); 

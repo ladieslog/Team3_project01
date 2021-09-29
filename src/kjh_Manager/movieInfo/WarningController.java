@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import kjh_Manager.userInfo.DestinyMovieUserDTO;
+import timeThread.TimeThread;
 
 public class WarningController implements Initializable{
 	
@@ -59,6 +60,7 @@ public class WarningController implements Initializable{
 	
 	// 삭제
 	public void remove() {
+		TimeThread tt = new TimeThread();
 		int result = dao.removeMovie(movieNumck);
 		// result가 2일시 알럿창 실행
 		System.out.println(result);
@@ -73,6 +75,7 @@ public class WarningController implements Initializable{
 	}
 	
 	public void Cancel() {
+		TimeThread tt = new TimeThread();
 		stage.close();
 	}
 }

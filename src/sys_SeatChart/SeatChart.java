@@ -21,6 +21,7 @@ import saveInfo.movieInfomat;
 import saveInfo.UserId;
 import sys_SeatChart.DB.SeatChartDBClass;
 import sys_SeatChart.Payment.Payment;
+import timeThread.TimeThread;
 
 
 public class SeatChart implements Initializable{
@@ -70,6 +71,7 @@ public class SeatChart implements Initializable{
 	}
 	
 	public void start() {
+		TimeThread tt = new TimeThread();
 		try {
 			Stage primaryStage = new Stage();
 			FXMLLoader loader = 
@@ -88,6 +90,7 @@ public class SeatChart implements Initializable{
 	}
 	
 	public void exit() {
+		TimeThread tt = new TimeThread();
 		try {
 			Stage Stage = new Stage();
 			FXMLLoader loader = 

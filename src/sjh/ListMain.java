@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import saveInfo.UserId;
+import timeThread.TimeThread;
 
 public class ListMain implements Initializable{
 	DBClass db = new DBClass();
@@ -29,6 +30,7 @@ public class ListMain implements Initializable{
 	
     public static String selectMovieName;
     public void ClickMovieName(ActionEvent e) {
+    	TimeThread tt = new TimeThread();
 		selectMovieName = ((Button)e.getTarget()).getText();
 		System.out.println("선택 영화 : " + selectMovieName);
 		gorefund();
@@ -54,6 +56,7 @@ public class ListMain implements Initializable{
     }
     
     public void mainbtn(){
+    	TimeThread tt = new TimeThread();
     	UserMain UserMain = new UserMain();
 		UserMain.User(); 
 		Stage window = (Stage)root.getScene().getWindow(); 

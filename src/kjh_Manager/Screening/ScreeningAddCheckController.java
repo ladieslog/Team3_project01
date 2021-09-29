@@ -15,6 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import kjh_Manager.movieInfo.DestinyMovieInfoDTO;
+import timeThread.TimeThread;
 
 public class ScreeningAddCheckController implements Initializable{
 	private static Parent root;
@@ -44,6 +45,7 @@ public class ScreeningAddCheckController implements Initializable{
 	}
 	
 	public void add() {
+		TimeThread tt = new TimeThread();
 		int screeningNum = dao.getScreeningNum(screening) + 1;
 		System.out.println(screeningNum);
 		
@@ -82,6 +84,7 @@ public class ScreeningAddCheckController implements Initializable{
 	}
 	
 	public void Cancel() {
+		TimeThread tt = new TimeThread();
 		Stage stage = (Stage) root.getScene().getWindow();
 		stage.close();
 	}

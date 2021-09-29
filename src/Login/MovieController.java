@@ -10,6 +10,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
+import timeThread.TimeThread;
 
 public class MovieController implements Initializable {
 	static Parent root;
@@ -40,6 +41,7 @@ public class MovieController implements Initializable {
 	}
 	
 	public void reservation() {
+		TimeThread tt = new TimeThread();
 		mediaPlayer.stop();
 		go.back();
 		Stage stage = (Stage)root.getScene().getWindow();

@@ -22,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import saveInfo.movieInfomat;
 import sys_SeatChart.SeatChart;
+import timeThread.TimeThread;
 
 
 public class ControllerView1 implements Initializable{
@@ -72,8 +73,8 @@ public class ControllerView1 implements Initializable{
  }
  public static boolean flag;
  public void clc01() {
+	 TimeThread tt = new TimeThread();
 	 //인연
-	 System.out.println(seat2);
 	 String st=seat.getSoloSeat(seat2);
 	st=st.substring(0,st.indexOf("/"));
 	int in =Integer.parseInt(st);
@@ -95,6 +96,7 @@ public class ControllerView1 implements Initializable{
 	//System.out.println(st);
  }
  public void clc02() {
+	 TimeThread tt = new TimeThread();
 	//연인
 	 String st2=seat.getCoupleSeat(seat2);
 	 st2=st2.substring(0,st2.indexOf("/"));
@@ -154,8 +156,8 @@ public class ControllerView1 implements Initializable{
  
 
  public void clc03() { 
+	 TimeThread tt = new TimeThread();
 	 stop();
-	 System.out.println(root);
 	 Stage stage = (Stage)root.getScene().getWindow();
 	 stage.close();
 	 

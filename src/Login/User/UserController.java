@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 import saveInfo.UserId;
 import sjh.BillMain;
+import timeThread.TimeThread;
 
 public class UserController implements Initializable {
 	Mainclass movie1 =new Mainclass();
@@ -26,16 +27,19 @@ public class UserController implements Initializable {
 	}
 	
 	public void goBack() {
+		TimeThread tt = new TimeThread();
 		back.back();
 		cancle();
 	}
 	
 	public void movieReservation() {
+		TimeThread tt = new TimeThread();
 		movie1.playon();
 		cancle();
 	}
 	
 	public void moviePurchase() {
+		TimeThread tt = new TimeThread();
 		cancle();
 		BillMain BillMain = new BillMain();
 		BillMain.list();

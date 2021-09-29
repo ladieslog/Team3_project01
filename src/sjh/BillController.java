@@ -16,6 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import saveInfo.UserId;
 import saveInfo.movieInfomat;
+import timeThread.TimeThread;
 import Login.User.UserMain;
 
 public class BillController implements Initializable{
@@ -45,6 +46,7 @@ public class BillController implements Initializable{
 	}
 	
 	public void payment_Alert() {
+		TimeThread tt = new TimeThread();
 		Alert alert =new Alert(AlertType.INFORMATION);
 		alert.setTitle("결제완료");
 		alert.setHeaderText("결제가 완료되었습니다.");

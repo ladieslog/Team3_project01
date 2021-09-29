@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import timeThread.TimeThread;
 
 
 
@@ -65,6 +66,7 @@ public class Controller2 implements Initializable{
 		}	
  }
  public void clc02() {
+	 TimeThread tt = new TimeThread();
 	 stop();
 	 
 	 stage = (Stage)root.getScene().getWindow();
@@ -120,6 +122,7 @@ public class Controller2 implements Initializable{
  
 
  public void clc01() { 
+	 TimeThread tt = new TimeThread();
 	 tal();
  }
  public void closed() {
