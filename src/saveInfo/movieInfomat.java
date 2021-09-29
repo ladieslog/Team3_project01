@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 public class movieInfomat {
 	private static String movieName;
 	private static int movieNum;
+	
 	public static String getMovieName() {
 		return movieName;
 	}

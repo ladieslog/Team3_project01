@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 		}
 		
 		public void start(Stage primaryStage) throws IOException {
-			// TODO Auto-generated method stub
+			// TODO Auto-generated msethod stub
 			Font.loadFont(getClass().getResourceAsStream("/Resources/HMFMMUEX.ttf"), 50);
 			FXMLLoader loader = 
 					new FXMLLoader(getClass().getResource("MainScreen.fxml"));

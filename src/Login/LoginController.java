@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import saveInfo.UserId;
-
+import sjh.ListMain;
 
 public class LoginController implements Initializable {
 	static Parent root;
@@ -82,11 +82,12 @@ public class LoginController implements Initializable {
 	*/
 	
 	
-  /*public void userLogin() {		// user 로그인 완료 후 뜨는 창
-		user.User();
+	public void userLogin() {		// user 로그인 완료 후 뜨는 창
+		ListMain ListMain = new ListMain();
+		ListMain.gorefund();
 	}
 	
-	public void managerLogin() {	// 관리자 로그인 완료 후 뜨는 창
+	/*public void managerLogin() {	// 관리자 로그인 완료 후 뜨는 창
 		manager.manager();
 		cancle();
 	}*/

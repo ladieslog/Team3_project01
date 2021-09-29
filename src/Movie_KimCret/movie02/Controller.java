@@ -143,6 +143,7 @@ public class Controller implements Initializable{
 		ControllerView1 con2=loader.getController();
 		con2.setRoot(newRoot);
 		con2.setInfo(llc.get(0));
+		con2.setSeat(seat.get(0));
 
 		con2.setpath(path);		
 		con2.setImage(1);
@@ -167,6 +168,8 @@ public class Controller implements Initializable{
 		con2.setRoot(newRoot);
 		con2.setInfo(llc.get(1));
 
+		con2.setSeat(seat.get(1));
+		
 		con2.setpath(path);
 		con2.setImage(2);
 		
