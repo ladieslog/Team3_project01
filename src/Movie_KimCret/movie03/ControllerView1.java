@@ -83,14 +83,13 @@ public class ControllerView1 implements Initializable{
 		alert.show();
 	}else {
 		number();
+		//연결 솔로
 		flag = false;
 		SeatChart seatchart = new SeatChart();
 		seatchart.start();
 		Stage window = (Stage)root.getScene().getWindow(); 
 		window.close();
-		
-		
-		
+
 	}
 	
 	//System.out.println(st);
@@ -112,7 +111,6 @@ public class ControllerView1 implements Initializable{
 			seatchart.start();
 			Stage window = (Stage)root.getScene().getWindow(); 
 			window.close();
-			
 		}
  }
  

@@ -39,8 +39,7 @@ public class UserController implements Initializable {
 		cancle();
 		BillMain BillMain = new BillMain();
 		BillMain.list();
-		Stage window = (Stage)root.getScene().getWindow(); 
-		window.close();
+		
 	}
 	
 	@Override
