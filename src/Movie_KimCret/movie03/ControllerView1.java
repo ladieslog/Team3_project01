@@ -72,6 +72,7 @@ public class ControllerView1 implements Initializable{
  }
  public void clc01() {
 	 //인연
+	 System.out.println(seat2);
 	 String st=seat.getSoloSeat(seat2);
 	st=st.substring(0,st.indexOf("/"));
 	int in =Integer.parseInt(st);
