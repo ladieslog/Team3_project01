@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 import saveInfo.UserId;
+import sjh.BillMain;
 
 public class UserController implements Initializable {
 	Mainclass movie1 =new Mainclass();
@@ -35,8 +36,11 @@ public class UserController implements Initializable {
 	}
 	
 	public void moviePurchase() {
-		
 		cancle();
+		BillMain BillMain = new BillMain();
+		BillMain.list();
+		Stage window = (Stage)root.getScene().getWindow(); 
+		window.close();
 	}
 	
 	@Override
@@ -44,16 +48,4 @@ public class UserController implements Initializable {
 		// TODO Auto-generated method stub
 		back = new goBackMain();
 	}
-
-
-
-
-	
-
-
-
-
-
-
-	
 }
