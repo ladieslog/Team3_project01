@@ -152,7 +152,7 @@ public class movieSeatDAO {
 		con = connect();
 		ArrayList<movieSeat_DTO> arr=new ArrayList<movieSeat_DTO>();
 		try {
-			ps= con.prepareStatement("SELECT DISTINCT MovieNum, SCREENINGTIME FROM destinymovie_seat WHERE TO_CHAR(?, 'yyyy/MM/dd') = TO_CHAR(SCREENINGTIME, 'yyyy/MM/dd')");
+			ps= con.prepareStatement("SELECT DISTINCT MovieNum, SCREENINGTIME FROM destinymovie_seat WHERE TO_CHAR(?, 'yyyy/MM/dd') = TO_CHAR(SCREENINGTIME, 'yyyy/MM/dd') ORDER BY SCREENINGTIME ASC");
 			ps.setTimestamp(1, time);
 			rs= ps.executeQuery();
 				while(rs.next()) {
