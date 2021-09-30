@@ -53,6 +53,11 @@ public class WarningController implements Initializable{
 			alert.setContentText("관리자 계정은 삭제가 불가능합니다");
 			alert.show();
 		}
+		if(result == 4) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setContentText("해당 회원이 예매한 좌석이 있어서 삭제가 불가능합니다");
+			alert.show();
+		}
 		System.out.println(result);
 		tv.getItems().clear();
 		con.dbList(tv, id, pwd, name, gender, tel);

@@ -75,10 +75,13 @@ public class DestinyMovieUserDAO {
 			return 3;
 		}
 		try {
-			ps = con.prepareStatement("DELETE FROM destinymovie_user WHERE id=?");
+			ps = con.prepareStatement("SELECT * FROM destinymovie_seat WHERE ID = ?");
 			ps.setString(1, id);
-			result = ps.executeUpdate();
-			ps = con.prepareStatement("UPDATE destinymovie_seat SET RESERVATION = '0', ID = NULL, PRICE = 0 WHERE ID = ?");
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				return 4;
+			}
+			ps = con.prepareStatement("DELETE FROM destinymovie_user WHERE id=?");
 			ps.setString(1, id);
 			result = ps.executeUpdate();
 		} catch (SQLException e) {
