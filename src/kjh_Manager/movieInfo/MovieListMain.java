@@ -19,7 +19,6 @@ public class MovieListMain {
 		mlc.setRoot(root);
 		arg0.setScene(scene);
 		arg0.show();
-		//마스터 푸쉬용 코드
 	}
 
 
