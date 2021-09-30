@@ -71,8 +71,14 @@ public class DestinyMovieUserDAO {
 	public int removeUser(String id) {
 		int result = 0;
 		con = connect();
+		if(id.equals("team03")) {
+			return 3;
+		}
 		try {
 			ps = con.prepareStatement("DELETE FROM destinymovie_user WHERE id=?");
+			ps.setString(1, id);
+			result = ps.executeUpdate();
+			ps = con.prepareStatement("UPDATE destinymovie_seat SET RESERVATION = '0', ID = NULL, PRICE = 0 WHERE ID = ?");
 			ps.setString(1, id);
 			result = ps.executeUpdate();
 		} catch (SQLException e) {
