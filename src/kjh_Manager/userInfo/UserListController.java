@@ -27,7 +27,7 @@ public class UserListController implements Initializable{
 	
 	private static DestinyMovieUserDAO dao = DestinyMovieUserDAO.getInstance(); // DAO
 	
-	private static DestinyMovieUserDTO checkedDto; // 테이블에서 선택된 데이터
+	private DestinyMovieUserDTO checkedDto; // 테이블에서 선택된 데이터
 	
 	
 	

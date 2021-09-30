@@ -37,7 +37,7 @@ public class MovieListController implements Initializable{
 	@FXML
 	private TableColumn movieAvg;
 	
-	private static DestinyMovieInfoDTO checkDTO; // 테이블에서 선택한 데이터를 저장할 변수
+	private DestinyMovieInfoDTO checkDTO; // 테이블에서 선택한 데이터를 저장할 변수
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

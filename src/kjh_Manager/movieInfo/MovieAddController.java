@@ -26,7 +26,7 @@ public class MovieAddController implements Initializable{
 	
 	private static Stage stage;
 	private static Parent root;
-	private static File file;
+	private File file;
 
 	private static DestinyMovieInfoDAO dao;
 	
@@ -73,7 +73,7 @@ public class MovieAddController implements Initializable{
 		TextArea movieComtentArea = (TextArea) root.lookup("#movieComent");
 		
 		if(file == null) { 
-			alertShow("이미지를 추기해주세요");
+			alertShow("이미지를 추가해주세요");
 			return;
 		}
 		if(movieName.getText().equals("")) {
